@@ -632,6 +632,93 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .benefits li::before { content: '✦'; flex: none; margin-top: 3px; font-size: 11px; color: var(--caramel); }
 .lips-quote { font: italic 300 clamp(1.25rem, 1.8vw, 1.55rem)/1.4 var(--serif); margin: 0 0 30px; max-width: 26em; }
 
+/* ---------- Antes y después ---------- */
+.results { background: var(--espresso); padding: var(--pad) var(--gutter); }
+.results .eyebrow { color: var(--caramel-light); }
+.results .sec-head, .ba-wrap { max-width: 1400px; margin-left: auto; margin-right: auto; }
+.ba-wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.ba-stage { --hmax: min(66vh, 600px); height: var(--hmax); display: flex; align-items: center; justify-content: center; }
+.ba-box {
+  --pos: 50%;
+  position: relative;
+  width: min(100%, calc(var(--hmax) * var(--ar)));
+  aspect-ratio: var(--ar);
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--mocha);
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity .35s;
+}
+.ba-box.is-swapping { opacity: 0; }
+.ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.ba-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-tag {
+  position: absolute;
+  bottom: 14px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(20, 14, 11, .6);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--bone);
+  font: 600 11px/1 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.ba-tag-l { left: 14px; }
+.ba-tag-r { right: 14px; background: rgba(246, 241, 234, .88); color: var(--espresso); }
+.ba-handle {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  margin-left: -1px;
+  background: var(--bone);
+  box-shadow: 0 0 12px rgba(0, 0, 0, .35);
+}
+.ba-knob {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 46px; height: 46px;
+  margin: -23px 0 0 -23px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bone);
+  color: var(--espresso);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, .5);
+  transition: transform .4s var(--ease);
+}
+.ba-knob svg { width: 20px; height: 20px; }
+.ba-box:hover .ba-knob, .ba-box.is-dragging .ba-knob { transform: scale(1.08); }
+.ba-handle:focus-visible { outline: none; }
+.ba-handle:focus-visible .ba-knob { box-shadow: 0 0 0 3px var(--caramel-light); }
+.ba-cases { display: flex; flex-direction: column; border-top: 1px solid var(--line-light); }
+.ba-case {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-light);
+  text-align: left;
+  color: var(--bone);
+}
+/* La atenuación va en los hijos: el botón lo anima GSAP y no debe llevar transición propia */
+.ba-case > span { transition: opacity .4s, transform .6s var(--ease); }
+.ba-num { font: 600 11.5px/1 var(--sans); letter-spacing: .16em; color: var(--caramel-light); }
+.ba-txt { display: flex; flex-direction: column; gap: 4px; }
+.ba-txt strong { font: 300 clamp(1.15rem, 1.6vw, 1.45rem)/1.2 var(--serif); transition: color .4s; }
+.ba-txt small { font-size: 13px; color: rgba(246, 241, 234, .55); }
+.ba-case[aria-pressed="true"] .ba-txt strong { color: var(--caramel-light); }
+.ba-cases:hover .ba-case > span { opacity: .55; }
+.ba-cases:hover .ba-case:hover > span, .ba-cases:hover .ba-case[aria-pressed="true"] > span { opacity: 1; }
+.ba-case:hover .ba-txt { transform: translateX(6px); }
+
 /* ---------- Combos ---------- */
 .combos { padding: var(--pad) var(--gutter); max-width: 1400px; margin: 0 auto; }
 .combos .eyebrow { color: var(--mocha); }
@@ -837,6 +924,31 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .how-head { position: static; }
   .step { top: calc(90px + var(--i) * 14px); }
   .visit-map { height: 340px; }
+  .ba-wrap { grid-template-columns: 1fr; }
+  .ba-stage { --hmax: min(62vh, 520px); height: auto; }
+  /* En móvil los casos se deslizan en horizontal bajo el comparador */
+  .ba-cases {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 6px;
+    scroll-padding: 0 var(--gutter);
+    border-top: 0;
+    scrollbar-width: none;
+  }
+  .ba-cases::-webkit-scrollbar { display: none; }
+  .ba-case {
+    flex: 0 0 auto;
+    width: 230px;
+    padding: 14px 16px;
+    border: 1px solid var(--line-light);
+    border-radius: 16px;
+    scroll-snap-align: start;
+  }
+  .ba-case[aria-pressed="true"] { border-color: var(--caramel-light); }
+  .ba-cases:hover .ba-case > span { opacity: 1; }
   /* En móvil la galería se desliza en horizontal */
   .ig-grid {
     grid-auto-flow: column;
@@ -887,6 +999,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   <a class="logo" href="#top" aria-label="LeidyT, inicio" data-i18n-aria="nav.home">Leidy<em>T</em></a>
   <nav class="nav-links" aria-label="Principal">
     <a href="#tratamientos" data-i18n="nav.tx">Tratamientos</a>
+    <a href="#resultados" data-i18n="nav.results">Resultados</a>
     <a href="#led" data-i18n="nav.led">Luz LED</a>
     <a href="#como-trabajamos" data-i18n="nav.how">Cómo trabajamos</a>
     <a href="#contacto" data-i18n="nav.contact">Contacto</a>
@@ -907,6 +1020,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 <div class="menu" id="menu">
   <nav class="menu-links" aria-label="Menú">
     <span class="ln"><a href="#tratamientos" data-i18n="nav.tx">Tratamientos</a></span>
+    <span class="ln"><a href="#resultados" data-i18n="nav.results">Resultados</a></span>
     <span class="ln"><a href="#led" data-i18n="nav.led">Luz LED</a></span>
     <span class="ln"><a href="#como-trabajamos" data-i18n="nav.how">Cómo trabajamos</a></span>
     <span class="ln"><a href="#contacto" data-i18n="nav.contact">Contacto</a></span>
@@ -1045,7 +1159,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
             <ul class="chips" data-i18n="tx5.chips"><li>Diseño de cejas</li><li>Técnica pelo a pelo</li><li>Acabado natural</li></ul>
             <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
-          <div class="tx-media"><img src="https://images.unsplash.com/photo-1783110782727-b1b79df0c06f?auto=format&fit=crop&w=800&q=75" alt="Diseño de cejas con marcas de medición" loading="lazy"></div>
+          <div class="tx-media"><img src="img/tx-microblading.jpg" alt="Especialista de LeidyT realizando microblading de cejas" loading="lazy"></div>
         </div></div></div>
       </div>
 
@@ -1073,7 +1187,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
             <ul class="chips" data-i18n="tx7.chips"><li>Manicura</li><li>Esmaltado</li><li>Cuidado de manos</li></ul>
             <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
-          <div class="tx-media"><img src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?auto=format&fit=crop&w=800&q=75" alt="Manos con manicura en tono nude" loading="lazy"></div>
+          <div class="tx-media"><img src="img/tx-manicura.jpg" alt="Manicura en tonos pastel hecha en LeidyT" loading="lazy"></div>
         </div></div></div>
       </div>
 
@@ -1087,7 +1201,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
             <ul class="chips" data-i18n="tx8.chips"><li>Masaje terapéutico</li><li>Relajación</li><li>Bienestar</li></ul>
             <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
-          <div class="tx-media"><img src="https://images.unsplash.com/photo-1745327883508-b6cd32e5dde5?auto=format&fit=crop&w=800&q=75" alt="Masaje de espalda" loading="lazy"></div>
+          <div class="tx-media"><img src="img/tx-masaje.jpg" alt="Masaje de espalda en LeidyT" loading="lazy"></div>
         </div></div></div>
       </div>
 
@@ -1101,7 +1215,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
             <ul class="chips" data-i18n="tx9.chips"><li>Corte</li><li>Peinado</li><li>Cuidado del cabello</li></ul>
             <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
-          <div class="tx-media"><img src="https://images.unsplash.com/photo-1675034741473-afed58a142e8?auto=format&fit=crop&w=800&q=75" alt="Peluquera peinando a una clienta" loading="lazy"></div>
+          <div class="tx-media"><img src="img/tx-peluqueria.jpg" alt="Melena rubia con ondas peinada en LeidyT" loading="lazy"></div>
         </div></div></div>
       </div>
     </div>
@@ -1165,6 +1279,53 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
         <ul class="benefits" data-reveal data-i18n="lips.list"><li>Más definición sin perder naturalidad</li><li>Un aspecto más hidratado y jugoso</li><li>Volumen adaptado a tus propios labios</li><li>Un resultado en armonía con tu rostro</li></ul>
         <p class="lips-quote" data-reveal data-i18n="lips.quote">La idea no es que piensen «se ha hecho los labios», sino «qué bien le quedan».</p>
         <div data-reveal><a class="btn btn-dark" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Antes y después -->
+  <section class="results on-dark" id="resultados" data-nav="dark" aria-labelledby="ba-title">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="ba.eyebrow">Antes y después</span>
+        <h2 class="display h-lg reveal-lines" id="ba-title" data-i18n="ba.title"><span class="ln"><span>Resultados reales</span></span><span class="ln"><span><em>de nuestras clientas.</em></span></span></h2>
+      </div>
+      <p class="lead muted" data-reveal data-i18n="ba.lead">Desliza la línea para comparar. Todos son trabajos de LeidyT publicados en nuestro Instagram.</p>
+    </div>
+    <div class="ba-wrap">
+      <div class="ba-stage">
+        <div class="ba-box" style="--ar: 1.026">
+          <img class="ba-img ba-after" src="img/ba/labios-despues.jpg" alt="Después: aumento de labios" draggable="false" loading="lazy">
+          <div class="ba-before"><img class="ba-img" src="img/ba/labios-antes.jpg" alt="Antes: aumento de labios" draggable="false" loading="lazy"></div>
+          <span class="ba-tag ba-tag-l" data-i18n="ba.before">Antes</span>
+          <span class="ba-tag ba-tag-r" data-i18n="ba.after">Después</span>
+          <div class="ba-handle" role="slider" tabindex="0" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="ba-cases" aria-label="Casos">
+        <button class="ba-case" type="button" aria-pressed="true" data-before="img/ba/labios-antes.jpg" data-after="img/ba/labios-despues.jpg" data-ar="1.026">
+          <span class="ba-num">01</span><span class="ba-txt"><strong data-i18n="ba1.t">Aumento de labios</strong><small data-i18n="ba1.d">Más volumen y definición, con un resultado natural</small></span>
+        </button>
+        <button class="ba-case" type="button" aria-pressed="false" data-before="img/ba/surco-antes.jpg" data-after="img/ba/surco-despues.jpg" data-ar="0.6145">
+          <span class="ba-num">02</span><span class="ba-txt"><strong data-i18n="ba2.t">Labios y surco nasogeniano</strong><small data-i18n="ba2.d">Surco suavizado y labios con más volumen</small></span>
+        </button>
+        <button class="ba-case" type="button" aria-pressed="false" data-before="img/ba/labios2-antes.jpg" data-after="img/ba/labios2-despues.jpg" data-ar="0.669">
+          <span class="ba-num">03</span><span class="ba-txt"><strong data-i18n="ba3.t">Labios jugosos y definidos</strong><small data-i18n="ba3.d">Contorno, hidratación y volumen en armonía con el rostro</small></span>
+        </button>
+        <button class="ba-case" type="button" aria-pressed="false" data-before="img/ba/frente-antes.jpg" data-after="img/ba/frente-despues.jpg" data-ar="1.661">
+          <span class="ba-num">04</span><span class="ba-txt"><strong data-i18n="ba4.t">Tratamiento antiedad</strong><small data-i18n="ba4.d">Arrugas de expresión de la frente suavizadas</small></span>
+        </button>
+        <button class="ba-case" type="button" aria-pressed="false" data-before="img/ba/cejas-antes.jpg" data-after="img/ba/cejas-despues.jpg" data-ar="2.016">
+          <span class="ba-num">05</span><span class="ba-txt"><strong data-i18n="ba5.t">Diseño de cejas</strong><small data-i18n="ba5.d">Cejas más definidas y cuidadas</small></span>
+        </button>
+        <button class="ba-case" type="button" aria-pressed="false" data-before="img/ba/pestanas-antes.jpg" data-after="img/ba/pestanas-despues.jpg" data-ar="2.016">
+          <span class="ba-num">06</span><span class="ba-txt"><strong data-i18n="ba6.t">Extensiones de pestañas</strong><small data-i18n="ba6.d">Volumen y longitud para una mirada más abierta</small></span>
+        </button>
+        <button class="ba-case" type="button" aria-pressed="false" data-before="img/ba/cabello-antes.jpg" data-after="img/ba/cabello-despues.jpg" data-ar="0.4815">
+          <span class="ba-num">07</span><span class="ba-txt"><strong data-i18n="ba7.t">Melena lisa y luminosa</strong><small data-i18n="ba7.d">Antes y después en nuestra peluquería</small></span>
+        </button>
       </div>
     </div>
   </section>
@@ -1500,6 +1661,26 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     'foot.tag': 'Салон красоты и косметология в Льорет-де-Мар. Beauty &amp; Aesthetic Clinic.',
     'foot.follow': 'Мы в соцсетях',
     'ig.title': lines('Свежее —', '<em>в Instagram.</em>'),
+    'nav.results': 'Результаты',
+    'ba.eyebrow': 'До и после',
+    'ba.title': lines('Реальные результаты', '<em>наших клиенток.</em>'),
+    'ba.lead': 'Передвиньте линию, чтобы сравнить. Все работы — LeidyT, из нашего Instagram.',
+    'ba.before': 'До',
+    'ba.after': 'После',
+    'ba1.t': 'Увеличение губ',
+    'ba1.d': 'Больше объёма и чёткости, естественный результат',
+    'ba2.t': 'Губы и носогубные складки',
+    'ba2.d': 'Сглаженные складки и более полные губы',
+    'ba3.t': 'Сочные, чёткие губы',
+    'ba3.d': 'Контур, увлажнение и объём в гармонии с лицом',
+    'ba4.t': 'Антивозрастная процедура',
+    'ba4.d': 'Смягчение мимических морщин на лбу',
+    'ba5.t': 'Дизайн бровей',
+    'ba5.d': 'Более выразительные и ухоженные брови',
+    'ba6.t': 'Наращивание ресниц',
+    'ba6.d': 'Объём и длина для открытого взгляда',
+    'ba7.t': 'Гладкие и блестящие волосы',
+    'ba7.d': 'До и после в нашей парикмахерской',
     'ig.follow': 'Подписаться в Instagram',
     'foot.legal': 'Правовая информация',
     'foot.privacy': 'Конфиденциальность'
@@ -1764,6 +1945,60 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     }, { threshold: 0.35 }).observe(led);
   }
 
+  // ---------- Antes y después: comparador con deslizador ----------
+  var baBox = $('.ba-box');
+  var baHandle = $('.ba-handle', baBox);
+  var baAfter = $('.ba-after', baBox);
+  var baBefore = $('.ba-before img', baBox);
+  var baCases = $$('.ba-case');
+  var baPos = 50, baDrag = false;
+  function setBa(p) {
+    baPos = Math.max(0, Math.min(100, p));
+    baBox.style.setProperty('--pos', baPos + '%');
+    baHandle.setAttribute('aria-valuenow', Math.round(baPos));
+  }
+  function baFromEvent(e) {
+    var r = baBox.getBoundingClientRect();
+    setBa((e.clientX - r.left) / r.width * 100);
+  }
+  baBox.addEventListener('pointerdown', function (e) {
+    baDrag = true;
+    baBox.classList.add('is-dragging');
+    try { baBox.setPointerCapture(e.pointerId); } catch (err) {}
+    baFromEvent(e);
+  });
+  baBox.addEventListener('pointermove', function (e) { if (baDrag) baFromEvent(e); });
+  ['pointerup', 'pointercancel'].forEach(function (t) {
+    baBox.addEventListener(t, function () { baDrag = false; baBox.classList.remove('is-dragging'); });
+  });
+  baHandle.addEventListener('keydown', function (e) {
+    var step = { ArrowLeft: -5, ArrowRight: 5, Home: -100, End: 100 }[e.key];
+    if (step === undefined) return;
+    e.preventDefault();
+    setBa(baPos + step);
+  });
+  function showCase(btn) {
+    if (btn.getAttribute('aria-pressed') === 'true') return;
+    baCases.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    var title = $('strong', btn).textContent;
+    var pre = [btn.dataset.before, btn.dataset.after].map(function (src) {
+      var im = new Image();
+      im.src = src;
+      return im.decode ? im.decode().catch(function () {}) : Promise.resolve();
+    });
+    baBox.classList.add('is-swapping');
+    Promise.all(pre.concat(new Promise(function (r) { setTimeout(r, 350); }))).then(function () {
+      baBefore.src = btn.dataset.before;
+      baAfter.src = btn.dataset.after;
+      baBefore.alt = (lang === 'ru' ? 'До: ' : 'Antes: ') + title;
+      baAfter.alt = (lang === 'ru' ? 'После: ' : 'Después: ') + title;
+      baBox.style.setProperty('--ar', btn.dataset.ar);
+      setBa(50);
+      baBox.classList.remove('is-swapping');
+    });
+  }
+  baCases.forEach(function (b) { b.addEventListener('click', function () { showCase(b); }); });
+
   if (!motion) { doc.classList.remove('is-loading'); return; }
 
   // ============================================================
@@ -1853,6 +2088,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   gsap.fromTo('.lips-media img', { yPercent: -6, scale: 1.15 }, {
     yPercent: 6, scale: 1, ease: 'none',
     scrollTrigger: { trigger: '.lips', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  // ---------- Antes y después: la línea se mueve sola una vez para enseñar el gesto ----------
+  var baHint = { p: 50 };
+  gsap.timeline({ scrollTrigger: { trigger: '.ba-box', start: 'top 70%', once: true } })
+    .to(baHint, { p: 22, duration: 1.1, ease: 'power2.inOut', onUpdate: function () { if (!baDrag) setBa(baHint.p); } })
+    .to(baHint, { p: 74, duration: 1.3, ease: 'power2.inOut', onUpdate: function () { if (!baDrag) setBa(baHint.p); } })
+    .to(baHint, { p: 50, duration: 0.9, ease: 'power2.inOut', onUpdate: function () { if (!baDrag) setBa(baHint.p); } });
+  gsap.from('.ba-case', {
+    x: 30, opacity: 0, duration: 1.2, stagger: 0.06, ease: 'expo.out',
+    scrollTrigger: { trigger: '.ba-cases', start: 'top 88%', once: true }
   });
 
   // ---------- Combos: el "+" gira al entrar ----------
