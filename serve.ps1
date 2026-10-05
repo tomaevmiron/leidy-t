@@ -1,5 +1,5 @@
 # Servidor estático mínimo para previsualizar la web: powershell -File serve.ps1
-param([int]$port = 8082)
+param([int]$port = 8092)
 $root = $PSScriptRoot
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:$port/")
