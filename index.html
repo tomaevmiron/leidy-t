@@ -34,8 +34,11 @@
   "name": "LeidyT",
   "alternateName": "LeidyT Beauty & Aesthetic Clinic",
   "description": "Salón de belleza y centro estético en Lloret de Mar: cosmetología, estética facial avanzada, microblading, manicura, masajes terapéuticos y peluquería.",
+  "telephone": ["+34 633 632 049", "+34 722 488 707"],
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Carrer del Canonge Domènech, 10",
+    "postalCode": "17310",
     "addressLocality": "Lloret de Mar",
     "addressRegion": "Girona",
     "addressCountry": "ES"
@@ -424,26 +427,29 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .sec-head .display { margin-top: 22px; }
 .sec-head .lead { margin: 0; }
 .treatments .eyebrow { color: var(--caramel-light); }
-.tx-list { border-top: 1px solid var(--line-light); max-width: 1400px; margin: 0 auto; }
+.tx-wrap { max-width: 1400px; margin: 0 auto; }
+.tx-list { border-top: 1px solid var(--line-light); }
 .tx-item { border-bottom: 1px solid var(--line-light); }
 .tx-item h3 { margin: 0; font: inherit; }
 .tx-row {
   width: 100%;
   display: grid;
-  grid-template-columns: 70px 1fr auto 44px;
+  grid-template-columns: 56px 1fr 44px;
   align-items: center;
-  gap: 24px;
-  padding: clamp(22px, 3.2vh, 32px) 0;
+  gap: 20px;
+  padding: clamp(20px, 3vh, 28px) 0;
   text-align: left;
 }
 .tx-row > span { transition: opacity .5s; }
 .tx-num { font: 600 12px/1 var(--sans); letter-spacing: .18em; color: var(--caramel-light); }
+.tx-title { display: flex; flex-direction: column; gap: 8px; transition: opacity .5s, transform .8s var(--ease); }
 .tx-name {
-  font: 300 clamp(1.7rem, 3.4vw, 3.2rem)/1.08 var(--serif);
+  font: 300 clamp(1.6rem, 2.8vw, 2.7rem)/1.08 var(--serif);
   letter-spacing: -.015em;
-  transition: transform .8s var(--ease), color .4s;
+  transition: color .4s;
 }
-.tx-tags { font-size: 13px; letter-spacing: .04em; color: rgba(246, 241, 234, .55); text-align: right; }
+.tx-row[aria-expanded="true"] .tx-name { color: var(--caramel-light); }
+.tx-tags { font-size: 13px; letter-spacing: .04em; color: rgba(246, 241, 234, .55); }
 .tx-plus { position: relative; width: 44px; height: 44px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line-light); transition: background-color .4s, box-shadow .4s; }
 .tx-plus::before, .tx-plus::after {
   content: '';
@@ -459,36 +465,54 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .tx-row[aria-expanded="true"] .tx-plus::after { transform: translate(-50%, -50%) rotate(0deg); }
 @media (hover: hover) {
   .tx-list:hover .tx-row > span { opacity: .42; }
-  .tx-list:hover .tx-row:hover > span, .tx-row[aria-expanded="true"] > span { opacity: 1; }
-  .tx-row:hover .tx-name { transform: translateX(14px); color: var(--caramel-light); }
+  .tx-list:hover .tx-row:hover > span, .tx-list:hover .tx-row[aria-expanded="true"] > span { opacity: 1; }
+  .tx-row:hover .tx-title { transform: translateX(10px); }
+  .tx-row:hover .tx-name { color: var(--caramel-light); }
 }
 .tx-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .8s var(--ease); }
 .tx-item.is-open .tx-panel { grid-template-rows: 1fr; }
 .tx-inner { overflow: hidden; visibility: hidden; transition: visibility 0s .8s; }
 .tx-item.is-open .tx-inner { visibility: visible; transition-delay: 0s; }
-.tx-content { display: grid; grid-template-columns: 70px 1fr 300px; gap: 24px; padding: 0 0 40px; }
+.tx-content { display: grid; grid-template-columns: 56px 1fr; gap: 20px; padding: 0 0 36px; }
 .tx-body { grid-column: 2; max-width: 40em; }
 .tx-body p { margin: 0 0 22px; color: rgba(246, 241, 234, .75); font-size: 1.02rem; }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 26px; }
 .chips li { padding: 8px 15px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line-light); font-size: 13px; color: rgba(246, 241, 234, .85); }
-.tx-media { grid-column: 3; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--mocha); }
+.tx-media { grid-column: 2; max-width: 420px; border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--mocha); }
 .tx-media img { width: 100%; height: 100%; object-fit: cover; }
-.tx-float {
-  position: fixed;
-  left: 0; top: 0;
-  z-index: 6;
-  width: clamp(240px, 21vw, 320px);
-  aspect-ratio: 4 / 5;
-  border-radius: 20px;
-  overflow: hidden;
-  pointer-events: none;
+/* Foto grande fija del tratamiento abierto (solo escritorio; la monta el JS) */
+.tx-visual { display: none; }
+.tx-frame { position: relative; height: min(72vh, 640px); border-radius: 24px; overflow: hidden; background: var(--mocha); }
+.tx-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
   opacity: 0;
-  visibility: hidden;
-  background: var(--mocha);
+  transform: scale(1.06);
+  transition: opacity .8s var(--ease), transform 1.6s var(--ease);
 }
-.has-float .tx-float { visibility: visible; }
-.tx-float img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s; }
-.tx-float img.is-on { opacity: 1; }
+.tx-frame img.is-on { opacity: 1; transform: scale(1); }
+.tx-caption {
+  position: absolute;
+  left: 16px; right: 16px; bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: rgba(20, 14, 11, .58);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--bone);
+}
+.tx-cap-num { font: 600 12px/1 var(--sans); letter-spacing: .18em; color: var(--caramel-light); }
+.tx-cap-name { font: 300 1.35rem/1.15 var(--serif); }
+@media (min-width: 901px) {
+  .js .tx-wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(40px, 5vw, 88px); align-items: start; }
+  .js .tx-visual { display: block; position: sticky; top: 100px; }
+  .js .tx-media { display: none; }
+}
 
 /* ---------- LED ---------- */
 .led { position: relative; background: var(--night); padding: var(--pad) var(--gutter); overflow: hidden; isolation: isolate; }
@@ -655,21 +679,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .info dt { font: 600 11px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 .info dd { margin: 0; font-size: 1.04rem; font-weight: 500; }
 .visit-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.visit-arch { position: relative; width: 100%; max-width: 460px; justify-self: end; margin: 0; }
-.visit-arch .arch { aspect-ratio: 3 / 4.1; }
-.visit-arch figcaption {
-  position: absolute;
-  left: 50%; bottom: 22px;
-  transform: translateX(-50%);
-  padding: 11px 18px;
-  border-radius: 999px;
-  background: rgba(246, 241, 234, .9);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
+.info dd a { border-bottom: 1px solid var(--line); transition: border-color .4s, color .4s; }
+.info dd a:hover { color: var(--caramel); border-color: currentColor; }
+.visit-map {
+  width: 100%;
+  height: clamp(360px, 64vh, 580px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--sand);
+  box-shadow: 0 30px 60px -40px rgba(36, 25, 19, .55);
 }
+/* Tono cálido para que el mapa no desentone con la paleta */
+.visit-map iframe { display: block; width: 100%; height: 100%; border: 0; filter: grayscale(.35) sepia(.18); }
 
 /* ---------- CTA final ---------- */
 .cta { position: relative; background: var(--espresso); padding: calc(var(--pad) * 1.15) var(--gutter); text-align: center; overflow: hidden; isolation: isolate; }
@@ -686,6 +707,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 .cta .eyebrow { color: var(--caramel-light); }
 .cta h2 { font-size: clamp(3rem, 8.4vw, 8.4rem); margin: 26px auto 44px; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .cta-note { margin: 22px 0 0; font-size: 14px; color: rgba(246, 241, 234, .6); }
 
 /* ---------- Footer ---------- */
@@ -757,10 +779,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .scroll-cue { display: none; }
   .tx-row { grid-template-columns: 34px 1fr 40px; gap: 14px; }
   .tx-plus { width: 40px; height: 40px; }
-  .tx-tags { display: none; }
   .tx-content { grid-template-columns: 1fr; gap: 22px; padding-bottom: 32px; }
   .tx-body, .tx-media { grid-column: 1; }
-  .tx-media { aspect-ratio: 16 / 10; }
+  .tx-media { max-width: none; }
   .led-grid, .lips-grid, .visit-grid, .how-grid { grid-template-columns: 1fr; }
   .led-visual { max-width: 420px; }
   .lips-media { aspect-ratio: 4 / 4.4; }
@@ -768,7 +789,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .combo { min-height: 0; }
   .how-head { position: static; }
   .step { top: calc(90px + var(--i) * 14px); }
-  .visit-arch { justify-self: center; max-width: 380px; }
+  .visit-map { height: 340px; }
   .footer-cols { grid-template-columns: 1fr 1fr; }
   .footer-cols > div:first-child { grid-column: 1 / -1; }
 }
@@ -814,7 +835,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
       <button type="button" data-lang="ru" aria-pressed="false" lang="ru">RU</button>
     </div>
-    <a class="btn nav-cta" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="nav.book">Reservar</span></a>
+    <a class="btn nav-cta" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="nav.book">Reservar</span></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
       <span class="t-open" data-i18n="nav.menu">Menú</span><span class="t-close" data-i18n="nav.close">Cerrar</span><span class="burger" aria-hidden="true"></span>
     </button>
@@ -830,8 +851,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     <span class="ln"><a href="#contacto" data-i18n="nav.contact">Contacto</a></span>
   </nav>
   <div class="menu-foot">
-    <span data-i18n="menu.where">Lloret de Mar · Costa Brava · Con cita previa</span>
-    <a class="btn btn-light" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+    <span>Carrer del Canonge Domènech, 10 · Lloret de Mar<br><a href="tel:+34633632049">+34 633 632 049</a> · <a href="tel:+34722488707">+34 722 488 707</a></span>
+    <a class="btn btn-light" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
   </div>
 </div>
 
@@ -843,7 +864,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       <h1 class="display hero-title" data-i18n="hero.title"><span class="ln"><span>Tu piel cambia.</span></span><span class="ln"><span><em>Su cuidado</em></span></span><span class="ln"><span><em>también.</em></span></span></h1>
       <p class="hero-sub" data-i18n="hero.sub">Cosmetología y estética avanzada en Lloret de Mar. Cada tratamiento empieza con una valoración personalizada, porque ninguna piel necesita exactamente lo mismo.</p>
       <div class="hero-cta">
-        <a class="btn btn-dark" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+        <a class="btn btn-dark" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
         <a class="link-arrow" href="#tratamientos"><span data-i18n="hero.link">Ver tratamientos</span> <i>→</i></a>
       </div>
       <p class="hero-services" data-i18n="hero.services">Cosmetología · Estética facial · Microblading · Manicura · Masajes terapéuticos · Peluquería</p>
@@ -891,16 +912,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       <p class="lead muted" data-reveal data-i18n="tx.lead">De una limpieza facial a protocolos combinados de estética avanzada. Pulsa en cada tratamiento para saber más.</p>
     </div>
 
+    <div class="tx-wrap">
     <div class="tx-list">
-      <div class="tx-item">
-        <h3><button class="tx-row" type="button" id="tx-b1" aria-expanded="false" aria-controls="tx-p1">
-          <span class="tx-num">01</span><span class="tx-name" data-i18n="tx1.name">Estética facial avanzada</span><span class="tx-tags" data-i18n="tx1.tags">Limpieza · Hidratación · Peelings</span><span class="tx-plus" aria-hidden="true"></span>
+      <div class="tx-item is-open">
+        <h3><button class="tx-row" type="button" id="tx-b1" aria-expanded="true" aria-controls="tx-p1">
+          <span class="tx-num">01</span><span class="tx-title"><span class="tx-name" data-i18n="tx1.name">Estética facial avanzada</span><span class="tx-tags" data-i18n="tx1.tags">Limpieza · Hidratación · Peelings</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p1" role="region" aria-labelledby="tx-b1"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx1.desc">Tratamientos de cosmetología totalmente personalizados para mejorar la hidratación, la luminosidad, la textura y la calidad de tu piel.</p>
             <ul class="chips" data-i18n="tx1.chips"><li>Limpieza facial profesional</li><li>Hidratación facial</li><li>Mesoterapia</li><li>Dermapen</li><li>Peeling BioRePeelCl₃</li><li>LED-terapia</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1761718209835-c8586b7dcac0?auto=format&fit=crop&w=800&q=75" alt="Tratamiento facial aplicando crema con brocha" loading="lazy"></div>
         </div></div></div>
@@ -908,13 +930,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b2" aria-expanded="false" aria-controls="tx-p2">
-          <span class="tx-num">02</span><span class="tx-name" data-i18n="tx2.name">Biorevitalización y PDRN</span><span class="tx-tags" data-i18n="tx2.tags">Hidratación · Regeneración</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">02</span><span class="tx-title"><span class="tx-name" data-i18n="tx2.name">Biorevitalización y PDRN</span><span class="tx-tags" data-i18n="tx2.tags">Hidratación · Regeneración</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p2" role="region" aria-labelledby="tx-b2"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx2.desc">No buscan aportar volumen ni modificar tus facciones: trabajan la calidad de la piel para que se vea más hidratada, fresca y luminosa.</p>
             <ul class="chips" data-i18n="tx2.chips"><li>Biorevitalización con ácido hialurónico</li><li>PDRN regenerador</li><li>Combinable con RF Lifting</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1761819920857-7edc5e808fd3?auto=format&fit=crop&w=800&q=75" alt="Tratamiento facial de microagujas" loading="lazy"></div>
         </div></div></div>
@@ -922,13 +944,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b3" aria-expanded="false" aria-controls="tx-p3">
-          <span class="tx-num">03</span><span class="tx-name" data-i18n="tx3.name">RF Lifting</span><span class="tx-tags" data-i18n="tx3.tags">Firmeza · Colágeno</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">03</span><span class="tx-title"><span class="tx-name" data-i18n="tx3.name">RF Lifting</span><span class="tx-tags" data-i18n="tx3.tags">Firmeza · Colágeno</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p3" role="region" aria-labelledby="tx-b3"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx3.desc">La radiofrecuencia estimula el colágeno y la elastina para mejorar de forma progresiva la firmeza, la elasticidad y la definición del óvalo facial.</p>
             <ul class="chips" data-i18n="tx3.chips"><li>Firmeza y elasticidad</li><li>Óvalo facial</li><li>Textura y líneas finas</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?auto=format&fit=crop&w=800&q=75" alt="Especialista aplicando un tratamiento facial con aparatología" loading="lazy"></div>
         </div></div></div>
@@ -936,13 +958,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b4" aria-expanded="false" aria-controls="tx-p4">
-          <span class="tx-num">04</span><span class="tx-name" data-i18n="tx4.name">Ácido hialurónico</span><span class="tx-tags" data-i18n="tx4.tags">Labios · Surco nasogeniano</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">04</span><span class="tx-title"><span class="tx-name" data-i18n="tx4.name">Ácido hialurónico</span><span class="tx-tags" data-i18n="tx4.tags">Labios · Surco nasogeniano</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p4" role="region" aria-labelledby="tx-b4"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx4.desc">Aumento de labios y surco nasogeniano con un resultado natural y en armonía con tu rostro, siempre tras una valoración previa.</p>
             <ul class="chips" data-i18n="tx4.chips"><li>Aumento de labios</li><li>Definición del contorno</li><li>Surco nasogeniano</li><li>Hidratación de labios</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1654375078795-7229b6458d25?auto=format&fit=crop&w=800&q=75" alt="Primer plano de unos labios naturales" loading="lazy"></div>
         </div></div></div>
@@ -950,13 +972,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b5" aria-expanded="false" aria-controls="tx-p5">
-          <span class="tx-num">05</span><span class="tx-name" data-i18n="tx5.name">Microblading</span><span class="tx-tags" data-i18n="tx5.tags">Cejas pelo a pelo</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">05</span><span class="tx-title"><span class="tx-name" data-i18n="tx5.name">Microblading</span><span class="tx-tags" data-i18n="tx5.tags">Cejas pelo a pelo</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p5" role="region" aria-labelledby="tx-b5"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx5.desc">Cejas definidas y naturales, diseñadas según la forma de tu rostro para enmarcar tu mirada.</p>
             <ul class="chips" data-i18n="tx5.chips"><li>Diseño de cejas</li><li>Técnica pelo a pelo</li><li>Acabado natural</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1783110782727-b1b79df0c06f?auto=format&fit=crop&w=800&q=75" alt="Diseño de cejas con marcas de medición" loading="lazy"></div>
         </div></div></div>
@@ -964,13 +986,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b6" aria-expanded="false" aria-controls="tx-p6">
-          <span class="tx-num">06</span><span class="tx-name" data-i18n="tx6.name">Depilación láser diodo</span><span class="tx-tags" data-i18n="tx6.tags">Reducción duradera del vello</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">06</span><span class="tx-title"><span class="tx-name" data-i18n="tx6.name">Depilación láser diodo</span><span class="tx-tags" data-i18n="tx6.tags">Reducción duradera del vello</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p6" role="region" aria-labelledby="tx-b6"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx6.desc">Reducción progresiva y duradera del vello, con menos irritación y menos pelos encarnados. Un protocolo por sesiones adaptado a tu piel y a tu tipo de vello.</p>
             <ul class="chips" data-i18n="tx6.chips"><li>Valoración previa</li><li>Protocolo por sesiones</li><li>Parámetros personalizados</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1700760933574-9f0f4ea9aa3b?auto=format&fit=crop&w=800&q=75" alt="Depilación láser en la pierna" loading="lazy"></div>
         </div></div></div>
@@ -978,13 +1000,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b7" aria-expanded="false" aria-controls="tx-p7">
-          <span class="tx-num">07</span><span class="tx-name" data-i18n="tx7.name">Manicura</span><span class="tx-tags" data-i18n="tx7.tags">Manos cuidadas</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">07</span><span class="tx-title"><span class="tx-name" data-i18n="tx7.name">Manicura</span><span class="tx-tags" data-i18n="tx7.tags">Manos cuidadas</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p7" role="region" aria-labelledby="tx-b7"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx7.desc">Manos cuidadas y un acabado impecable para lucir unas uñas bonitas en el día a día.</p>
             <ul class="chips" data-i18n="tx7.chips"><li>Manicura</li><li>Esmaltado</li><li>Cuidado de manos</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?auto=format&fit=crop&w=800&q=75" alt="Manos con manicura en tono nude" loading="lazy"></div>
         </div></div></div>
@@ -992,13 +1014,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b8" aria-expanded="false" aria-controls="tx-p8">
-          <span class="tx-num">08</span><span class="tx-name" data-i18n="tx8.name">Masajes terapéuticos</span><span class="tx-tags" data-i18n="tx8.tags">Bienestar · Relajación</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">08</span><span class="tx-title"><span class="tx-name" data-i18n="tx8.name">Masajes terapéuticos</span><span class="tx-tags" data-i18n="tx8.tags">Bienestar · Relajación</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p8" role="region" aria-labelledby="tx-b8"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx8.desc">Masajes para liberar tensiones, aliviar la carga muscular y regalarte un momento de bienestar.</p>
             <ul class="chips" data-i18n="tx8.chips"><li>Masaje terapéutico</li><li>Relajación</li><li>Bienestar</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1745327883508-b6cd32e5dde5?auto=format&fit=crop&w=800&q=75" alt="Masaje de espalda" loading="lazy"></div>
         </div></div></div>
@@ -1006,19 +1028,24 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
       <div class="tx-item">
         <h3><button class="tx-row" type="button" id="tx-b9" aria-expanded="false" aria-controls="tx-p9">
-          <span class="tx-num">09</span><span class="tx-name" data-i18n="tx9.name">Peluquería</span><span class="tx-tags" data-i18n="tx9.tags">Corte · Peinado</span><span class="tx-plus" aria-hidden="true"></span>
+          <span class="tx-num">09</span><span class="tx-title"><span class="tx-name" data-i18n="tx9.name">Peluquería</span><span class="tx-tags" data-i18n="tx9.tags">Corte · Peinado</span></span><span class="tx-plus" aria-hidden="true"></span>
         </button></h3>
         <div class="tx-panel" id="tx-p9" role="region" aria-labelledby="tx-b9"><div class="tx-inner"><div class="tx-content">
           <div class="tx-body">
             <p data-i18n="tx9.desc">Tu peinado también forma parte de tu cuidado. Completa tu visita a LeidyT con nuestro servicio de peluquería.</p>
             <ul class="chips" data-i18n="tx9.chips"><li>Corte</li><li>Peinado</li><li>Cuidado del cabello</li></ul>
-            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+            <a class="link-arrow" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
           </div>
           <div class="tx-media"><img src="https://images.unsplash.com/photo-1675034741473-afed58a142e8?auto=format&fit=crop&w=800&q=75" alt="Peluquera peinando a una clienta" loading="lazy"></div>
         </div></div></div>
       </div>
     </div>
-    <div class="tx-float" aria-hidden="true"></div>
+    <div class="tx-visual" aria-hidden="true">
+      <div class="tx-frame">
+        <div class="tx-caption"><span class="tx-cap-num">01</span><span class="tx-cap-name">Estética facial avanzada</span></div>
+      </div>
+    </div>
+    </div>
   </section>
 
   <!-- LED-terapia -->
@@ -1072,7 +1099,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
         <p class="lips-text" data-reveal data-i18n="lips.text">A veces buscamos más volumen; otras, definir el contorno, equilibrar pequeñas asimetrías o recuperar la hidratación. Por eso el resultado empieza antes de la aplicación: observando tus facciones y escuchando lo que quieres conseguir.</p>
         <ul class="benefits" data-reveal data-i18n="lips.list"><li>Más definición sin perder naturalidad</li><li>Un aspecto más hidratado y jugoso</li><li>Volumen adaptado a tus propios labios</li><li>Un resultado en armonía con tu rostro</li></ul>
         <p class="lips-quote" data-reveal data-i18n="lips.quote">La idea no es que piensen «se ha hecho los labios», sino «qué bien le quedan».</p>
-        <div data-reveal><a class="btn btn-dark" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a></div>
+        <div data-reveal><a class="btn btn-dark" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a></div>
       </div>
     </div>
   </section>
@@ -1150,23 +1177,24 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
         <span class="eyebrow" data-i18n="visit.eyebrow">Visítanos</span>
         <h2 class="display h-lg reveal-lines" id="visit-title" data-i18n="visit.title"><span class="ln"><span>Te esperamos en</span></span><span class="ln"><span><em>Lloret de Mar.</em></span></span></h2>
         <dl class="info" data-reveal>
-          <div><dt data-i18n="visit.where">Dónde</dt><dd data-i18n="visit.where.d">Lloret de Mar, Girona · Costa Brava</dd></div>
+          <div><dt data-i18n="visit.where">Dirección</dt><dd>Carrer del Canonge Domènech, 10<br>17310 Lloret de Mar, Girona</dd></div>
+          <div><dt data-i18n="visit.phones">Teléfonos</dt><dd><a href="tel:+34633632049">+34 633 632 049</a><br><a href="tel:+34722488707">+34 722 488 707</a></dd></div>
           <div><dt data-i18n="visit.appt">Citas</dt><dd data-i18n="visit.appt.d">Siempre con cita previa</dd></div>
-          <div><dt data-i18n="visit.book">Reservas</dt><dd data-i18n="visit.book.d">Por mensaje directo en Instagram</dd></div>
           <div><dt data-i18n="visit.lang">Idiomas</dt><dd data-i18n="visit.lang.d">Español · Русский</dd></div>
         </dl>
         <div class="visit-actions" data-reveal>
-          <a class="btn btn-dark" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
-            <span data-i18n="visit.dm">Escribir por Instagram</span>
+          <a class="btn btn-dark" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.6 8.6 0 0 1-12.7 7.6L3.5 20.5l1.3-4.1a8.6 8.6 0 1 1 15.7-4.8Z"/><path d="M9.1 8.2c.3 2.9 2.5 5.4 5.4 6l1.3-1.4-1.9-1-.9.8a4.7 4.7 0 0 1-2.3-2.3l.8-.9-1-1.9-1.4.7Z"/></svg>
+            <span data-i18n="visit.dm">Reservar por WhatsApp</span>
           </a>
-          <a class="btn btn-outline" href="https://www.instagram.com/leidyt.estetica.lloret/" target="_blank" rel="noopener"><span data-i18n="visit.ig">Ver nuestro Instagram</span></a>
+          <a class="btn btn-outline" href="tel:+34633632049"><span data-i18n="visit.call">Llamar</span></a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Carrer+del+Canonge+Dom%C3%A8nech+10%2C+17310+Lloret+de+Mar" target="_blank" rel="noopener"><span data-i18n="visit.route">Cómo llegar</span></a>
         </div>
       </div>
-      <figure class="visit-arch" data-reveal>
-        <div class="arch"><img src="https://images.unsplash.com/photo-1749137315807-036403c62107?auto=format&fit=crop&w=1000&q=78" alt="Productos de cuidado facial en una estantería de tonos cálidos" loading="lazy"></div>
-        <figcaption>@leidyt.estetica.lloret</figcaption>
-      </figure>
+      <div class="visit-map" data-reveal>
+        <iframe title="Mapa: LeidyT, Carrer del Canonge Domènech 10, Lloret de Mar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Carrer+del+Canonge+Dom%C3%A8nech+10,+17310+Lloret+de+Mar&amp;z=17&amp;output=embed"></iframe>
+      </div>
     </div>
   </section>
 
@@ -1176,8 +1204,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     <span class="eyebrow" data-reveal data-i18n="cta.eyebrow">Reserva tu cita</span>
     <h2 class="display reveal-lines" id="cta-title" data-i18n="cta.title"><span class="ln"><span>Tu piel,</span></span><span class="ln"><span><em>en buenas manos.</em></span></span></h2>
     <div data-reveal>
-      <a class="btn btn-light" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
-      <p class="cta-note" data-i18n="cta.note">Escríbenos por Instagram y te ayudamos a elegir tu tratamiento.</p>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+        <a class="btn btn-outline" href="tel:+34633632049"><span>+34 633 632 049</span></a>
+      </div>
+      <p class="cta-note" data-i18n="cta.note">Escríbenos por WhatsApp o llámanos y te ayudamos a elegir tu tratamiento.</p>
     </div>
   </section>
 </main>
@@ -1201,9 +1232,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     <div>
       <h4 data-i18n="nav.contact">Contacto</h4>
       <ul>
-        <li data-i18n="foot.city">Lloret de Mar, Girona</li>
-        <li data-i18n="visit.appt.d">Siempre con cita previa</li>
-        <li><a href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener" data-i18n="visit.dm">Escribir por Instagram</a></li>
+        <li>Carrer del Canonge Domènech, 10<br>17310 Lloret de Mar, Girona</li>
+        <li><a href="tel:+34633632049">+34 633 632 049</a></li>
+        <li><a href="tel:+34722488707">+34 722 488 707</a></li>
+        <li><a href="https://wa.me/34633632049" data-book target="_blank" rel="noopener">WhatsApp</a></li>
       </ul>
     </div>
     <div>
@@ -1221,7 +1253,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   </div>
 </footer>
 
-<a class="btn book-bar" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+<a class="btn book-bar" href="https://wa.me/34633632049" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1238,7 +1270,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   // ============================================================
   var CONFIG = {
     instagram: 'leidyt.estetica.lloret',
-    whatsapp: ''
+    whatsapp: '34633632049'
   };
 
   var doc = document.documentElement;
@@ -1265,7 +1297,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     'nav.book': 'Записаться',
     'nav.menu': 'Меню',
     'nav.close': 'Закрыть',
-    'menu.where': 'Льорет-де-Мар · Коста-Брава · По предварительной записи',
     'cta.book': 'Записаться на консультацию',
     'hero.title': lines('Кожа меняется.', '<em>Меняется</em>', '<em>и уход.</em>'),
     'hero.sub': 'Косметология и эстетика в Льорет-де-Мар. Каждая процедура начинается с индивидуальной консультации — ведь каждой коже нужно что-то своё.',
@@ -1366,21 +1397,19 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     's4.d': 'Уход не заканчивается в салоне. Мы порекомендуем профессиональные средства — например, Tonic Essence от Casmara или EE Color Cream SPF 50 от Utsukusy.',
     'visit.eyebrow': 'Приходите к нам',
     'visit.title': lines('Ждём вас', '<em>в Льорет-де-Мар.</em>'),
-    'visit.where': 'Где',
-    'visit.where.d': 'Льорет-де-Мар, Жирона · Коста-Брава',
+    'visit.where': 'Адрес',
+    'visit.phones': 'Телефоны',
     'visit.appt': 'Запись',
     'visit.appt.d': 'Только по предварительной записи',
-    'visit.book': 'Как записаться',
-    'visit.book.d': 'Напишите нам в директ Instagram',
     'visit.lang': 'Языки',
     'visit.lang.d': 'Испанский · Русский',
-    'visit.dm': 'Написать в Instagram',
-    'visit.ig': 'Наш Instagram',
+    'visit.dm': 'Записаться в WhatsApp',
+    'visit.call': 'Позвонить',
+    'visit.route': 'Как добраться',
     'cta.eyebrow': 'Запись',
     'cta.title': lines('Ваша кожа —', '<em>в надёжных руках.</em>'),
-    'cta.note': 'Напишите нам в Instagram — поможем подобрать процедуру.',
+    'cta.note': 'Напишите нам в WhatsApp или позвоните — поможем подобрать процедуру.',
     'foot.tag': 'Салон красоты и косметология в Льорет-де-Мар. Beauty &amp; Aesthetic Clinic.',
-    'foot.city': 'Льорет-де-Мар, Жирона',
     'foot.follow': 'Мы в соцсетях',
     'foot.legal': 'Правовая информация',
     'foot.privacy': 'Конфиденциальность'
@@ -1494,6 +1523,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
       applyLang(l);
       try { localStorage.setItem('leidyt-lang', l); } catch (e) {}
       buildWords();
+      showPhoto(photoIdx);
       if (motion) ScrollTrigger.refresh();
     });
   });
@@ -1565,76 +1595,43 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   }, { passive: true });
   onScroll();
 
-  // ---------- Tratamientos: acordeón ----------
+  // ---------- Tratamientos: acordeón + foto grande fija (escritorio) ----------
   var txItems = $$('.tx-item');
   var refreshTimer = null;
-  var hideFloat = function () {};
+  var frame = $('.tx-frame');
+  var photoIdx = 0;
+  // La foto grande reutiliza la imagen de cada tratamiento; en móvil está oculta y no se descarga
+  var frameImgs = txItems.map(function (item) {
+    var img = document.createElement('img');
+    img.loading = 'lazy';
+    img.alt = '';
+    img.src = $('.tx-media img', item).getAttribute('src');
+    frame.insertBefore(img, $('.tx-caption', frame));
+    return img;
+  });
+  function showPhoto(i) {
+    photoIdx = i;
+    frameImgs.forEach(function (img, k) { img.classList.toggle('is-on', k === i); });
+    $('.tx-cap-num', frame).textContent = $('.tx-num', txItems[i]).textContent;
+    $('.tx-cap-name', frame).textContent = $('.tx-name', txItems[i]).textContent;
+  }
   function setOpen(item, open) {
     item.classList.toggle('is-open', open);
     $('.tx-row', item).setAttribute('aria-expanded', open ? 'true' : 'false');
   }
-  txItems.forEach(function (item) {
+  txItems.forEach(function (item, k) {
     $('.tx-row', item).addEventListener('click', function () {
       var willOpen = !item.classList.contains('is-open');
       txItems.forEach(function (other) { if (other !== item) setOpen(other, false); });
       setOpen(item, willOpen);
-      // Con el tratamiento abierto, su foto ya está en el panel: quitamos la flotante
-      if (willOpen) hideFloat();
+      if (willOpen) showPhoto(k);
       if (motion) {
         clearTimeout(refreshTimer);
         refreshTimer = setTimeout(function () { ScrollTrigger.refresh(); }, 850);
       }
     });
   });
-
-  // ---------- Tratamientos: imagen que sigue al cursor ----------
-  var fine = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px)').matches;
-  if (motion && fine) {
-    doc.classList.add('has-float');
-    var flt = $('.tx-float');
-    var fltImgs = [];
-    var hideTimer = null;
-    var shown = false;
-    gsap.set(flt, { xPercent: -50, yPercent: -50, scale: 0.6 });
-    var xTo = gsap.quickTo(flt, 'x', { duration: 0.65, ease: 'power3' });
-    var yTo = gsap.quickTo(flt, 'y', { duration: 0.65, ease: 'power3' });
-    var buildFloat = function () {
-      if (fltImgs.length) return;
-      txItems.forEach(function (item) {
-        var src = $('.tx-media img', item);
-        var img = document.createElement('img');
-        img.src = src.src;
-        img.alt = '';
-        flt.appendChild(img);
-        fltImgs.push(img);
-      });
-    };
-    hideFloat = function () {
-      clearTimeout(hideTimer);
-      if (!shown) return;
-      shown = false;
-      gsap.to(flt, { opacity: 0, scale: 0.6, duration: 0.45, ease: 'power3.in', overwrite: 'auto' });
-    };
-    txItems.forEach(function (item, k) {
-      var row = $('.tx-row', item);
-      row.addEventListener('pointerenter', function (e) {
-        clearTimeout(hideTimer);
-        if (item.classList.contains('is-open')) { hideFloat(); return; }
-        buildFloat();
-        fltImgs.forEach(function (img, j) { img.classList.toggle('is-on', j === k); });
-        if (!shown) {
-          shown = true;
-          gsap.set(flt, { x: e.clientX, y: e.clientY });
-          gsap.to(flt, { opacity: 1, scale: 1, duration: 0.6, ease: 'expo.out', overwrite: 'auto' });
-        }
-      });
-      row.addEventListener('pointerleave', function () {
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(hideFloat, 80);
-      });
-      row.addEventListener('pointermove', function (e) { xTo(e.clientX); yTo(e.clientY); });
-    });
-  }
+  showPhoto(0);
 
   // ---------- LED: selector de luz ----------
   var led = $('.led');
@@ -1742,6 +1739,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     y: 40, opacity: 0, duration: 1.2, stagger: 0.06, ease: 'expo.out',
     scrollTrigger: { trigger: '.tx-list', start: 'top 85%', once: true }
   });
+  gsap.fromTo('.tx-frame', { clipPath: 'inset(10% 10% 10% 10% round 24px)' }, {
+    clipPath: 'inset(0% 0% 0% 0% round 24px)', ease: 'none',
+    scrollTrigger: { trigger: '.tx-wrap', start: 'top 90%', end: 'top 30%', scrub: true }
+  });
 
   // ---------- LED: círculo que crece y anillos ----------
   gsap.fromTo('.led-circle', { scale: 0.7, opacity: 0.4 }, {
@@ -1781,11 +1782,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     });
   });
 
-  // ---------- Visítanos: parallax de la imagen ----------
-  gsap.fromTo('.visit-arch img', { yPercent: -6 }, {
-    yPercent: 6, ease: 'none',
-    scrollTrigger: { trigger: '.visit', start: 'top bottom', end: 'bottom top', scrub: true }
-  });
 
   // ---------- CTA: el halo respira con el scroll ----------
   gsap.fromTo('.cta-orb', { scale: 0.6, opacity: 0.4 }, {
