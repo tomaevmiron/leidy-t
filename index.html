@@ -1,0 +1,1807 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LeidyT · Salón de belleza y centro estético en Lloret de Mar</title>
+<meta name="description" content="LeidyT Beauty & Aesthetic Clinic, salón de belleza y centro estético en Lloret de Mar: cosmetología, estética facial avanzada, RF lifting, ácido hialurónico, microblading, láser diodo, manicura, masajes y peluquería.">
+<meta name="theme-color" content="#f6f1ea">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="LeidyT · Beauty & Aesthetic Clinic · Lloret de Mar">
+<meta property="og:description" content="Tu piel cambia. Su cuidado también. Cosmetología y estética avanzada con valoración personalizada en Lloret de Mar.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1670201203116-26644750a726?auto=format&fit=crop&w=1200&q=80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23231812'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='36' fill='%23f6f1ea'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<script>
+  // Activa el modo animado solo si hay JS y la persona no pide movimiento reducido
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('is-loading');
+      setTimeout(function () { d.classList.remove('is-loading'); }, 6000);
+    }
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "LeidyT",
+  "alternateName": "LeidyT Beauty & Aesthetic Clinic",
+  "description": "Salón de belleza y centro estético en Lloret de Mar: cosmetología, estética facial avanzada, microblading, manicura, masajes terapéuticos y peluquería.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lloret de Mar",
+    "addressRegion": "Girona",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Lloret de Mar",
+  "knowsLanguage": ["es", "ru"],
+  "sameAs": ["https://www.instagram.com/leidyt.estetica.lloret/"]
+}
+</script>
+<style>
+:root {
+  --bone: #f6f1ea;
+  --cream: #f0e8de;
+  --sand: #e9dccd;
+  --latte: #d8c4af;
+  --caramel: #a8754f;
+  --caramel-light: #d8ae88;
+  --mocha: #6f5244;
+  --espresso: #241913;
+  --night: #140e0b;
+  --ink: #241913;
+  --muted: #7f6c62;
+  --line: rgba(36, 25, 19, .14);
+  --line-light: rgba(246, 241, 234, .16);
+  --serif: 'Noto Serif Display', 'Playfair Display', Georgia, serif;
+  --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --gutter: clamp(16px, 4vw, 64px);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --pad: clamp(96px, 14vh, 170px);
+  --radius: 28px;
+  --arch: 999px 999px 28px 28px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+.is-loading body, .menu-open body { overflow: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--caramel); outline-offset: 4px; border-radius: 4px; }
+::selection { background: var(--caramel); color: #fff; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Tipografía ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font: 600 11.5px/1.4 var(--sans);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; opacity: .6; }
+.display {
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  margin: 0;
+}
+.display em { font-style: italic; color: var(--caramel); }
+.on-dark .display em { color: var(--caramel-light); }
+.h-lg { font-size: clamp(2.5rem, 5.2vw, 5rem); }
+.ln { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.ln > span { display: inline-block; }
+.lead { font-size: clamp(1rem, 1.2vw, 1.12rem); line-height: 1.7; max-width: 34em; }
+.muted { color: var(--muted); }
+.on-dark { color: var(--bone); }
+.on-dark .muted { color: rgba(246, 241, 234, .62); }
+
+/* ---------- Botones y enlaces ---------- */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6em;
+  height: 54px;
+  padding: 0 30px;
+  border-radius: 999px;
+  font: 600 14.5px/1 var(--sans);
+  letter-spacing: .02em;
+  overflow: hidden;
+  isolation: isolate;
+  white-space: nowrap;
+  transition: color .5s var(--ease), box-shadow .5s var(--ease);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--caramel);
+  transform: translateY(101%);
+  transition: transform .7s var(--ease);
+}
+.btn:hover::before { transform: translateY(0); }
+.btn:hover { color: #fff; }
+.btn span { position: relative; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-dark { background: var(--espresso); color: var(--bone); }
+.btn-light { background: var(--bone); color: var(--espresso); }
+.btn-outline { box-shadow: inset 0 0 0 1px currentColor; }
+.btn-outline:hover { box-shadow: inset 0 0 0 1px var(--caramel); }
+@media (hover: none) {
+  .btn { transition: transform .25s var(--ease); }
+  .btn:active, .nav-toggle:active { transform: scale(.96); }
+}
+
+.link-arrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  font: 600 14.5px/1.2 var(--sans);
+  letter-spacing: .01em;
+  padding-bottom: 6px;
+}
+.link-arrow::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(.35);
+  opacity: .5;
+  transition: transform .8s var(--ease), opacity .4s;
+}
+.link-arrow:hover::after { transform-origin: left; transform: scaleX(1); opacity: 1; }
+.link-arrow i { font-style: normal; transition: transform .6s var(--ease); }
+.link-arrow:hover i { transform: translateX(5px); }
+
+/* ---------- Preloader ---------- */
+.loader { display: none; }
+.is-loading .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  background: var(--espresso);
+  color: var(--bone);
+}
+.loader-word { font: 300 clamp(3.4rem, 11vw, 8rem)/1 var(--serif); letter-spacing: -.02em; overflow: hidden; padding-bottom: .1em; }
+.loader-word .t { font-style: italic; color: var(--caramel-light); }
+.loader-bar { width: min(240px, 60vw); height: 1px; background: rgba(246, 241, 234, .18); overflow: hidden; }
+.loader-bar i { display: block; height: 100%; background: var(--caramel-light); transform: scaleX(0); transform-origin: left; }
+.loader-sub { font: 600 11px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; opacity: .7; }
+.ch { display: inline-block; }
+
+/* ---------- Navegación ---------- */
+.nav {
+  --nav-fg: var(--ink);
+  --nav-bg: var(--bone);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 var(--gutter);
+  color: var(--nav-fg);
+  transition: transform .7s var(--ease), background-color .5s, color .5s;
+}
+.nav[data-theme="dark"] { --nav-fg: var(--bone); --nav-bg: var(--espresso); }
+.nav.is-scrolled[data-theme="light"] { background: rgba(246, 241, 234, .8); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.nav.is-scrolled[data-theme="dark"] { background: rgba(36, 25, 19, .62); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.nav.is-hidden { transform: translateY(-100%); }
+.menu-open .nav { --nav-fg: var(--bone); --nav-bg: var(--espresso); background: transparent !important; transform: none; }
+.logo { font: 300 28px/1 var(--serif); letter-spacing: -.02em; white-space: nowrap; }
+.logo em { color: var(--caramel); }
+.nav[data-theme="dark"] .logo em, .menu-open .logo em { color: var(--caramel-light); }
+.nav-links { display: flex; gap: 34px; font: 500 14px/1 var(--sans); }
+.nav-links a { position: relative; padding: 6px 0; }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .6s var(--ease);
+}
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.lang {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 30%, transparent);
+}
+.lang button {
+  height: 30px;
+  min-width: 38px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font: 600 11.5px/1 var(--sans);
+  letter-spacing: .12em;
+  transition: background-color .4s, color .4s;
+}
+.lang button[aria-pressed="true"] { background: var(--nav-fg); color: var(--nav-bg); }
+.nav .btn { height: 44px; padding: 0 22px; background: var(--nav-fg); color: var(--nav-bg); }
+.nav .btn:hover { color: #fff; }
+.nav-toggle { display: none; align-items: center; gap: 12px; height: 44px; font: 600 13px/1 var(--sans); letter-spacing: .04em; }
+.nav-toggle .t-close { display: none; }
+.menu-open .nav-toggle .t-open { display: none; }
+.menu-open .nav-toggle .t-close { display: inline; }
+.burger { position: relative; width: 22px; height: 8px; }
+.burger::before, .burger::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform .6s var(--ease), top .6s var(--ease);
+}
+.burger::before { top: 0; }
+.burger::after { top: 6.5px; }
+.menu-open .burger::before { top: 3.25px; transform: rotate(45deg); }
+.menu-open .burger::after { top: 3.25px; transform: rotate(-45deg); }
+
+/* ---------- Menú móvil ---------- */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 120px var(--gutter) 32px;
+  background: var(--espresso);
+  color: var(--bone);
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition: clip-path .9s var(--ease), visibility 0s .9s;
+}
+.menu-open .menu { clip-path: inset(0 0 0 0); visibility: visible; transition-delay: 0s; }
+.menu-links { display: flex; flex-direction: column; gap: 6px; }
+.menu-links a { display: inline-block; font: 300 clamp(2.5rem, 10.5vw, 4.4rem)/1.1 var(--serif); letter-spacing: -.02em; }
+.menu-links .ln:nth-child(even) a { font-style: italic; color: var(--caramel-light); }
+.menu-foot { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; font-size: 14px; color: rgba(246, 241, 234, .7); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 96px);
+  padding: 130px var(--gutter) 72px;
+  background:
+    radial-gradient(55% 60% at 82% 38%, #eedfcf 0%, rgba(238, 223, 207, 0) 70%),
+    var(--bone);
+  overflow: hidden;
+}
+.hero-copy { position: relative; z-index: 2; }
+.hero .eyebrow { color: var(--mocha); }
+.hero-title { font-size: clamp(2.6rem, 6.4vw, 6.6rem); margin: 28px 0 30px; }
+.hero-sub { font-size: clamp(1.02rem, 1.25vw, 1.15rem); line-height: 1.7; max-width: 31em; color: var(--muted); margin: 0 0 38px; }
+.hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 30px; }
+.hero-services {
+  margin: clamp(40px, 7vh, 72px) 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  max-width: 36em;
+  font: 500 12.5px/1.9 var(--sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-visual { position: relative; justify-self: end; width: min(100%, 500px, calc((100svh - 210px) * .75)); min-width: 300px; z-index: 1; }
+.arch { position: relative; aspect-ratio: 3 / 4; border-radius: var(--arch); overflow: hidden; background: var(--latte); }
+.arch img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; }
+.badge {
+  position: absolute;
+  left: -64px;
+  bottom: 64px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--espresso);
+  color: var(--bone);
+  z-index: 2;
+}
+.badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 26s linear infinite; }
+.badge text { font: 600 6.3px var(--sans); letter-spacing: .1em; text-transform: uppercase; fill: currentColor; }
+.badge-mark { font: italic 300 46px/1 var(--serif); color: var(--caramel-light); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero-chip {
+  position: absolute;
+  right: -18px;
+  top: 16%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(246, 241, 234, .9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px -18px rgba(36, 25, 19, .35);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.hero-chip b { font-weight: 600; letter-spacing: .12em; color: var(--caramel); }
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 44px;
+  background: var(--line);
+  overflow: hidden;
+}
+.scroll-cue::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1px; height: 100%;
+  background: var(--ink);
+  animation: cue 2.4s var(--ease) infinite;
+}
+@keyframes cue { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
+
+/* ---------- Marquee ---------- */
+.marquee { background: var(--espresso); color: var(--bone); padding: 26px 0; overflow: hidden; }
+.mq-track { display: flex; width: max-content; animation: mq 46s linear infinite; }
+.mq-track span {
+  display: flex;
+  align-items: center;
+  gap: .9em;
+  padding-right: .9em;
+  font: italic 300 clamp(1.6rem, 3vw, 2.5rem)/1.2 var(--serif);
+  white-space: nowrap;
+}
+.mq-track span::after { content: '✦'; font-style: normal; font-size: .42em; color: var(--caramel-light); }
+@keyframes mq { to { transform: translateX(-50%); } }
+
+/* ---------- Filosofía ---------- */
+.manifesto { padding: var(--pad) var(--gutter); max-width: 1400px; margin: 0 auto; }
+.manifesto .eyebrow { color: var(--mocha); }
+.manifesto-text {
+  font: 300 clamp(1.85rem, 3.7vw, 3.5rem)/1.2 var(--serif);
+  letter-spacing: -.015em;
+  max-width: 23em;
+  margin: 34px 0 clamp(64px, 10vh, 110px);
+}
+.manifesto-text em { color: var(--caramel); }
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 32px; }
+.pillar { padding-top: 24px; border-top: 1px solid var(--line); }
+.pillar span { font: italic 300 1.5rem/1 var(--serif); color: var(--caramel); }
+.pillar h3 { font: 600 1.02rem/1.35 var(--sans); margin: 18px 0 10px; }
+.pillar p { margin: 0; font-size: .95rem; color: var(--muted); }
+
+/* ---------- Tratamientos ---------- */
+.treatments { background: var(--espresso); padding: var(--pad) var(--gutter); }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px 64px; flex-wrap: wrap; margin-bottom: clamp(48px, 8vh, 88px); }
+.sec-head .display { margin-top: 22px; }
+.sec-head .lead { margin: 0; }
+.treatments .eyebrow { color: var(--caramel-light); }
+.tx-list { border-top: 1px solid var(--line-light); max-width: 1400px; margin: 0 auto; }
+.tx-item { border-bottom: 1px solid var(--line-light); }
+.tx-item h3 { margin: 0; font: inherit; }
+.tx-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70px 1fr auto 44px;
+  align-items: center;
+  gap: 24px;
+  padding: clamp(22px, 3.2vh, 32px) 0;
+  text-align: left;
+}
+.tx-row > span { transition: opacity .5s; }
+.tx-num { font: 600 12px/1 var(--sans); letter-spacing: .18em; color: var(--caramel-light); }
+.tx-name {
+  font: 300 clamp(1.7rem, 3.4vw, 3.2rem)/1.08 var(--serif);
+  letter-spacing: -.015em;
+  transition: transform .8s var(--ease), color .4s;
+}
+.tx-tags { font-size: 13px; letter-spacing: .04em; color: rgba(246, 241, 234, .55); text-align: right; }
+.tx-plus { position: relative; width: 44px; height: 44px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line-light); transition: background-color .4s, box-shadow .4s; }
+.tx-plus::before, .tx-plus::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 13px; height: 1.5px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform .6s var(--ease);
+}
+.tx-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+.tx-row[aria-expanded="true"] .tx-plus { background: var(--bone); color: var(--espresso); box-shadow: none; }
+.tx-row[aria-expanded="true"] .tx-plus::after { transform: translate(-50%, -50%) rotate(0deg); }
+@media (hover: hover) {
+  .tx-list:hover .tx-row > span { opacity: .42; }
+  .tx-list:hover .tx-row:hover > span, .tx-row[aria-expanded="true"] > span { opacity: 1; }
+  .tx-row:hover .tx-name { transform: translateX(14px); color: var(--caramel-light); }
+}
+.tx-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .8s var(--ease); }
+.tx-item.is-open .tx-panel { grid-template-rows: 1fr; }
+.tx-inner { overflow: hidden; visibility: hidden; transition: visibility 0s .8s; }
+.tx-item.is-open .tx-inner { visibility: visible; transition-delay: 0s; }
+.tx-content { display: grid; grid-template-columns: 70px 1fr 300px; gap: 24px; padding: 0 0 40px; }
+.tx-body { grid-column: 2; max-width: 40em; }
+.tx-body p { margin: 0 0 22px; color: rgba(246, 241, 234, .75); font-size: 1.02rem; }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 26px; }
+.chips li { padding: 8px 15px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line-light); font-size: 13px; color: rgba(246, 241, 234, .85); }
+.tx-media { grid-column: 3; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--mocha); }
+.tx-media img { width: 100%; height: 100%; object-fit: cover; }
+.tx-float {
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 6;
+  width: clamp(240px, 21vw, 320px);
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  background: var(--mocha);
+}
+.has-float .tx-float { visibility: visible; }
+.tx-float img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s; }
+.tx-float img.is-on { opacity: 1; }
+
+/* ---------- LED ---------- */
+.led { position: relative; background: var(--night); padding: var(--pad) var(--gutter); overflow: hidden; isolation: isolate; }
+.led-ambient { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.led-ambient i {
+  position: absolute;
+  left: 25%; top: 50%;
+  width: 90vmax; height: 90vmax;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1.4s var(--ease);
+}
+.led-ambient .a-red { background: radial-gradient(closest-side, rgba(255, 82, 64, .22), transparent 70%); }
+.led-ambient .a-green { background: radial-gradient(closest-side, rgba(64, 214, 138, .18), transparent 70%); }
+.led-ambient .a-blue { background: radial-gradient(closest-side, rgba(70, 120, 255, .22), transparent 70%); }
+.led[data-led="red"] .a-red, .led[data-led="green"] .a-green, .led[data-led="blue"] .a-blue { opacity: 1; }
+.led-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 7vw, 120px); align-items: center; max-width: 1400px; margin: 0 auto; }
+.led-visual { position: relative; width: 100%; max-width: 560px; justify-self: center; aspect-ratio: 1; }
+.led-rings { position: absolute; inset: -9%; pointer-events: none; }
+.led-rings i { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(246, 241, 234, .1); }
+.led-rings i:nth-child(2) { inset: 6%; }
+.led-circle { position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #2a1c17; }
+.led-circle img { width: 100%; height: 100%; object-fit: cover; }
+.led-tint { position: absolute; inset: 0; mix-blend-mode: color; opacity: 0; transition: opacity 1.1s var(--ease); }
+.led-tint.t-red { background: #ff3b2f; }
+.led-tint.t-green { background: #22d17a; }
+.led-tint.t-blue { background: #2f6bff; }
+.led[data-led="red"] .t-red { opacity: .35; }
+.led[data-led="green"] .t-green, .led[data-led="blue"] .t-blue { opacity: .72; }
+.led-dot {
+  position: absolute;
+  right: 6%; top: 8%;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--led-c, #ff5240);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--led-c, #ff5240) 22%, transparent), 0 0 40px 8px var(--led-c, #ff5240);
+  transition: background-color 1s, box-shadow 1s;
+}
+.led[data-led="red"] { --led-c: #ff5240; }
+.led[data-led="green"] { --led-c: #3fd98c; }
+.led[data-led="blue"] { --led-c: #4f80ff; }
+.led .eyebrow { color: var(--caramel-light); }
+.led .display { margin: 22px 0 24px; }
+.led-intro { color: rgba(246, 241, 234, .7); max-width: 32em; margin: 0 0 36px; }
+.led-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.led-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 20px 0 16px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--line-light);
+  font: 600 13.5px/1 var(--sans);
+  color: rgba(246, 241, 234, .8);
+  transition: background-color .5s, color .5s, box-shadow .5s;
+}
+.led-tab i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 12px var(--c); }
+.led-tab[aria-selected="true"] { background: var(--bone); color: var(--night); box-shadow: none; }
+.led-panel { min-height: 9.5em; }
+.led-panel:not([hidden]) { animation: rise .9s var(--ease); }
+.led-panel h3 { font: 300 clamp(1.6rem, 2.4vw, 2.2rem)/1.15 var(--serif); margin: 0 0 12px; color: var(--bone); }
+.led-panel p { margin: 0; color: rgba(246, 241, 234, .72); max-width: 30em; }
+.led-note { margin: 30px 0 0; padding-top: 22px; border-top: 1px solid var(--line-light); font-size: 14px; color: rgba(246, 241, 234, .6); max-width: 34em; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Labios ---------- */
+.lips { background: var(--sand); padding: var(--pad) var(--gutter); }
+.lips-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(48px, 7vw, 120px); align-items: center; max-width: 1400px; margin: 0 auto; }
+.lips-media { position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; background: var(--latte); }
+.lips-media img { position: absolute; left: 0; top: -8%; width: 100%; height: 116%; object-fit: cover; }
+.lips-tag {
+  position: absolute;
+  left: 20px; bottom: 20px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(246, 241, 234, .88);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font: 600 11px/1 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.lips .eyebrow { color: var(--mocha); }
+.lips h2 { font-size: clamp(2.2rem, 4.2vw, 4rem); margin: 22px 0 26px; }
+.lips-text { color: var(--muted); max-width: 34em; margin: 0; }
+.benefits { list-style: none; padding: 0; margin: 34px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.benefits li { display: flex; gap: 12px; padding: 16px 0; border-top: 1px solid var(--line); font-weight: 500; font-size: .98rem; }
+.benefits li::before { content: '✦'; flex: none; margin-top: 3px; font-size: 11px; color: var(--caramel); }
+.lips-quote { font: italic 300 clamp(1.25rem, 1.8vw, 1.55rem)/1.4 var(--serif); margin: 0 0 30px; max-width: 26em; }
+
+/* ---------- Combos ---------- */
+.combos { padding: var(--pad) var(--gutter); max-width: 1400px; margin: 0 auto; }
+.combos .eyebrow { color: var(--mocha); }
+.combo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 28px); }
+.combo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: var(--radius);
+  background: var(--sand);
+  overflow: hidden;
+}
+.combo.is-dark { background: var(--espresso); color: var(--bone); }
+.combo-label { font: 600 11.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; opacity: .6; }
+.combo-eq { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin: 34px 0 40px; font: 300 clamp(2rem, 3.5vw, 3.3rem)/1.02 var(--serif); letter-spacing: -.015em; }
+.combo-plus {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px currentColor;
+  font: 300 26px/1 var(--sans);
+  opacity: .7;
+}
+.combo-eq em { color: var(--caramel); }
+.combo.is-dark .combo-eq em { color: var(--caramel-light); }
+.combo-result { margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); }
+.combo.is-dark .combo-result { border-color: var(--line-light); }
+.combo-result strong { display: block; font: italic 400 clamp(1.25rem, 1.8vw, 1.55rem)/1.3 var(--serif); margin-bottom: 10px; }
+.combo-result p { margin: 0; font-size: .97rem; opacity: .72; max-width: 32em; }
+
+/* ---------- Cómo trabajamos ---------- */
+.how { background: var(--cream); padding: var(--pad) var(--gutter); }
+.how-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(48px, 6vw, 100px); max-width: 1400px; margin: 0 auto; }
+.how-head { position: sticky; top: 130px; align-self: start; }
+.how .eyebrow { color: var(--mocha); }
+.how-head .display { margin: 22px 0 26px; }
+.how-head .lead { color: var(--muted); }
+.steps { display: flex; flex-direction: column; gap: 22px; }
+.step {
+  position: sticky;
+  top: calc(120px + var(--i) * 20px);
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  min-height: 360px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--sand);
+  transform-origin: 50% 0;
+  box-shadow: 0 -18px 40px -30px rgba(36, 25, 19, .4);
+}
+.step:nth-child(2) { background: var(--latte); }
+.step:nth-child(3) { background: var(--mocha); color: var(--bone); }
+.step:nth-child(4) { background: var(--espresso); color: var(--bone); }
+.step-media { position: relative; background: rgba(0, 0, 0, .1); }
+.step-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.step-body { display: flex; flex-direction: column; padding: clamp(26px, 3vw, 44px); }
+.step-num { font: italic 300 3.4rem/1 var(--serif); color: var(--caramel); }
+.step:nth-child(n+3) .step-num { color: var(--caramel-light); }
+.step h3 { font: 400 clamp(1.6rem, 2.2vw, 2.1rem)/1.1 var(--serif); margin: auto 0 12px; padding-top: 30px; }
+.step p { margin: 0; font-size: .98rem; opacity: .8; }
+
+/* ---------- Visítanos ---------- */
+.visit { background: var(--bone); padding: var(--pad) var(--gutter); }
+.visit-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(48px, 7vw, 120px); align-items: center; max-width: 1400px; margin: 0 auto; }
+.visit .eyebrow { color: var(--mocha); }
+.visit .display { margin-top: 22px; }
+.info { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; margin: 44px 0; }
+.info div { padding: 18px 0 20px; border-top: 1px solid var(--line); }
+.info dt { font: 600 11px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.info dd { margin: 0; font-size: 1.04rem; font-weight: 500; }
+.visit-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.visit-arch { position: relative; width: 100%; max-width: 460px; justify-self: end; margin: 0; }
+.visit-arch .arch { aspect-ratio: 3 / 4.1; }
+.visit-arch figcaption {
+  position: absolute;
+  left: 50%; bottom: 22px;
+  transform: translateX(-50%);
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: rgba(246, 241, 234, .9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- CTA final ---------- */
+.cta { position: relative; background: var(--espresso); padding: calc(var(--pad) * 1.15) var(--gutter); text-align: center; overflow: hidden; isolation: isolate; }
+.cta-orb {
+  position: absolute;
+  left: 50%; top: 50%;
+  z-index: -1;
+  width: min(1100px, 130vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(216, 174, 136, .26), rgba(216, 174, 136, 0) 72%);
+  pointer-events: none;
+}
+.cta .eyebrow { color: var(--caramel-light); }
+.cta h2 { font-size: clamp(3rem, 8.4vw, 8.4rem); margin: 26px auto 44px; }
+.cta-note { margin: 22px 0 0; font-size: 14px; color: rgba(246, 241, 234, .6); }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--night); color: var(--bone); padding: clamp(72px, 10vh, 110px) var(--gutter) 28px; overflow: hidden; }
+.footer-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto; }
+.footer-tag { margin: 18px 0 0; max-width: 20em; color: rgba(246, 241, 234, .6); font-size: .95rem; }
+.footer h4 { margin: 0 0 18px; font: 600 11px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--caramel-light); }
+.footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: .95rem; color: rgba(246, 241, 234, .8); }
+.footer ul a:hover { color: var(--caramel-light); }
+.footer-mark {
+  margin: clamp(56px, 9vh, 100px) 0 0;
+  font: 300 clamp(5rem, 23vw, 22rem)/.8 var(--serif);
+  letter-spacing: -.04em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: .2em;
+  margin-bottom: -.12em;
+}
+.footer-mark .t { font-style: italic; color: var(--caramel-light); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  max-width: 1400px;
+  margin: 26px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-light);
+  font-size: 13px;
+  color: rgba(246, 241, 234, .55);
+}
+.footer-bottom nav { display: flex; gap: 22px; }
+.footer-bottom a:hover { color: var(--bone); }
+
+/* ---------- Barra de reserva (móvil) ---------- */
+/* Caramelo oscuro: contrasta tanto sobre secciones claras como oscuras */
+.book-bar { display: none; background: #8a5c3c; color: #fff; }
+.book-bar::before { background: var(--espresso); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .pillars { grid-template-columns: 1fr 1fr; gap: 36px 32px; }
+  .step { grid-template-columns: 1fr; min-height: 0; }
+  .step-media { height: 210px; }
+}
+@media (max-width: 1023px) {
+  .book-bar {
+    position: fixed;
+    left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 30;
+    display: flex;
+    height: 56px;
+    box-shadow: 0 16px 40px -12px rgba(20, 14, 11, .55);
+    transform: translateY(160%);
+    transition: transform .8s var(--ease), color .5s;
+  }
+  .book-bar.is-visible { transform: none; }
+  .menu-open .book-bar { transform: translateY(160%); }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 112px; gap: 48px; }
+  .hero-visual { justify-self: center; width: min(82vw, 400px); }
+  .badge { left: -22px; bottom: 36px; width: 116px; height: 116px; }
+  .badge-mark { font-size: 36px; }
+  .hero-chip { right: -10px; top: 9%; }
+  .scroll-cue { display: none; }
+  .tx-row { grid-template-columns: 34px 1fr 40px; gap: 14px; }
+  .tx-plus { width: 40px; height: 40px; }
+  .tx-tags { display: none; }
+  .tx-content { grid-template-columns: 1fr; gap: 22px; padding-bottom: 32px; }
+  .tx-body, .tx-media { grid-column: 1; }
+  .tx-media { aspect-ratio: 16 / 10; }
+  .led-grid, .lips-grid, .visit-grid, .how-grid { grid-template-columns: 1fr; }
+  .led-visual { max-width: 420px; }
+  .lips-media { aspect-ratio: 4 / 4.4; }
+  .combo-grid { grid-template-columns: 1fr; }
+  .combo { min-height: 0; }
+  .how-head { position: static; }
+  .step { top: calc(90px + var(--i) * 14px); }
+  .visit-arch { justify-self: center; max-width: 380px; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .footer-cols > div:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .nav { height: 68px; }
+  .nav .nav-cta { display: none; }
+  .logo { font-size: 25px; }
+  .hero-cta .btn { width: 100%; }
+  .hero-services { display: none; }
+  .hero-chip { font-size: 12px; padding: 10px 14px; }
+  .pillars { grid-template-columns: 1fr; }
+  .benefits, .info { grid-template-columns: 1fr; }
+  .visit-actions .btn { flex: 1 1 100%; }
+  .led-tab { padding: 0 16px 0 14px; }
+  .footer-bottom { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mq-track, .badge svg, .scroll-cue::after { animation: none; }
+  .led-panel:not([hidden]) { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-word"><span data-split="chars">Leidy</span><span class="t" data-split="chars">T</span></div>
+  <div class="loader-bar"><i></i></div>
+  <div class="loader-sub">Beauty &amp; Aesthetic Clinic</div>
+</div>
+
+<!-- Navegación -->
+<header class="nav" data-theme="light">
+  <a class="logo" href="#top" aria-label="LeidyT, inicio" data-i18n-aria="nav.home">Leidy<em>T</em></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#tratamientos" data-i18n="nav.tx">Tratamientos</a>
+    <a href="#led" data-i18n="nav.led">Luz LED</a>
+    <a href="#como-trabajamos" data-i18n="nav.how">Cómo trabajamos</a>
+    <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Idioma · Язык">
+      <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
+      <button type="button" data-lang="ru" aria-pressed="false" lang="ru">RU</button>
+    </div>
+    <a class="btn nav-cta" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="nav.book">Reservar</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="t-open" data-i18n="nav.menu">Menú</span><span class="t-close" data-i18n="nav.close">Cerrar</span><span class="burger" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<div class="menu" id="menu">
+  <nav class="menu-links" aria-label="Menú">
+    <span class="ln"><a href="#tratamientos" data-i18n="nav.tx">Tratamientos</a></span>
+    <span class="ln"><a href="#led" data-i18n="nav.led">Luz LED</a></span>
+    <span class="ln"><a href="#como-trabajamos" data-i18n="nav.how">Cómo trabajamos</a></span>
+    <span class="ln"><a href="#contacto" data-i18n="nav.contact">Contacto</a></span>
+  </nav>
+  <div class="menu-foot">
+    <span data-i18n="menu.where">Lloret de Mar · Costa Brava · Con cita previa</span>
+    <a class="btn btn-light" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+  </div>
+</div>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="top" data-nav="light">
+    <div class="hero-copy">
+      <p class="eyebrow">Beauty &amp; Aesthetic Clinic · Lloret de Mar</p>
+      <h1 class="display hero-title" data-i18n="hero.title"><span class="ln"><span>Tu piel cambia.</span></span><span class="ln"><span><em>Su cuidado</em></span></span><span class="ln"><span><em>también.</em></span></span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Cosmetología y estética avanzada en Lloret de Mar. Cada tratamiento empieza con una valoración personalizada, porque ninguna piel necesita exactamente lo mismo.</p>
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+        <a class="link-arrow" href="#tratamientos"><span data-i18n="hero.link">Ver tratamientos</span> <i>→</i></a>
+      </div>
+      <p class="hero-services" data-i18n="hero.services">Cosmetología · Estética facial · Microblading · Manicura · Masajes terapéuticos · Peluquería</p>
+    </div>
+    <div class="hero-visual">
+      <div class="arch">
+        <img src="https://images.unsplash.com/photo-1670201203116-26644750a726?auto=format&fit=crop&w=1100&q=80" alt="Mujer con la piel luminosa tocándose la mejilla" fetchpriority="high">
+      </div>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <defs><path id="badge-path" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+          <text><textPath href="#badge-path" textLength="236" lengthAdjust="spacing" data-i18n="hero.badge">Valoración personalizada ✦ Tratamientos seguros ✦</textPath></text>
+        </svg>
+        <span class="badge-mark">T</span>
+      </div>
+      <div class="hero-chip"><b>ES · RU</b><span data-i18n="hero.chip">Atención en español y ruso</span></div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" data-nav="dark" aria-hidden="true">
+    <div class="mq-track" data-i18n="mq"><span>Cosmetología</span><span>Estética facial</span><span>RF Lifting</span><span>Ácido hialurónico</span><span>Microblading</span><span>Láser diodo</span><span>Manicura</span><span>Masajes</span><span>Peluquería</span><span>Cosmetología</span><span>Estética facial</span><span>RF Lifting</span><span>Ácido hialurónico</span><span>Microblading</span><span>Láser diodo</span><span>Manicura</span><span>Masajes</span><span>Peluquería</span></div>
+  </div>
+
+  <!-- Filosofía -->
+  <section class="manifesto" data-nav="light" aria-labelledby="man-title">
+    <h2 class="eyebrow" id="man-title" data-reveal data-i18n="man.eyebrow">Nuestra filosofía</h2>
+    <p class="manifesto-text" data-words data-i18n="man.text">Cada piel es diferente, y su cuidado también debería serlo. No se trata de cambiar tu rostro, sino de cuidar la calidad de tu piel y ayudarla a verse <em>mejor con el tiempo.</em></p>
+    <div class="pillars">
+      <div class="pillar" data-reveal><span>01</span><h3 data-i18n="p1.t">Valoración personalizada</h3><p data-i18n="p1.d">Antes de cada tratamiento estudiamos tu piel, tus facciones y lo que quieres conseguir.</p></div>
+      <div class="pillar" data-reveal><span>02</span><h3 data-i18n="p2.t">Tratamientos seguros</h3><p data-i18n="p2.d">Protocolos profesionales adaptados a cada caso, con técnica cuidada y productos de calidad.</p></div>
+      <div class="pillar" data-reveal><span>03</span><h3 data-i18n="p3.t">Resultados naturales</h3><p data-i18n="p3.d">Realzamos tu belleza respetando tu esencia: natural, armónico y pensado para ti.</p></div>
+      <div class="pillar" data-reveal><span>04</span><h3 data-i18n="p4.t">Cuidado también en casa</h3><p data-i18n="p4.d">Te ayudamos a elegir productos profesionales para continuar tu rutina cada día.</p></div>
+    </div>
+  </section>
+
+  <!-- Tratamientos -->
+  <section class="treatments on-dark" id="tratamientos" data-nav="dark" aria-labelledby="tx-title">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="tx.eyebrow">Tratamientos</span>
+        <h2 class="display h-lg reveal-lines" id="tx-title" data-i18n="tx.title"><span class="ln"><span>Cuidado experto,</span></span><span class="ln"><span><em>a tu medida.</em></span></span></h2>
+      </div>
+      <p class="lead muted" data-reveal data-i18n="tx.lead">De una limpieza facial a protocolos combinados de estética avanzada. Pulsa en cada tratamiento para saber más.</p>
+    </div>
+
+    <div class="tx-list">
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b1" aria-expanded="false" aria-controls="tx-p1">
+          <span class="tx-num">01</span><span class="tx-name" data-i18n="tx1.name">Estética facial avanzada</span><span class="tx-tags" data-i18n="tx1.tags">Limpieza · Hidratación · Peelings</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p1" role="region" aria-labelledby="tx-b1"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx1.desc">Tratamientos de cosmetología totalmente personalizados para mejorar la hidratación, la luminosidad, la textura y la calidad de tu piel.</p>
+            <ul class="chips" data-i18n="tx1.chips"><li>Limpieza facial profesional</li><li>Hidratación facial</li><li>Mesoterapia</li><li>Dermapen</li><li>Peeling BioRePeelCl₃</li><li>LED-terapia</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1761718209835-c8586b7dcac0?auto=format&fit=crop&w=800&q=75" alt="Tratamiento facial aplicando crema con brocha" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b2" aria-expanded="false" aria-controls="tx-p2">
+          <span class="tx-num">02</span><span class="tx-name" data-i18n="tx2.name">Biorevitalización y PDRN</span><span class="tx-tags" data-i18n="tx2.tags">Hidratación · Regeneración</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p2" role="region" aria-labelledby="tx-b2"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx2.desc">No buscan aportar volumen ni modificar tus facciones: trabajan la calidad de la piel para que se vea más hidratada, fresca y luminosa.</p>
+            <ul class="chips" data-i18n="tx2.chips"><li>Biorevitalización con ácido hialurónico</li><li>PDRN regenerador</li><li>Combinable con RF Lifting</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1761819920857-7edc5e808fd3?auto=format&fit=crop&w=800&q=75" alt="Tratamiento facial de microagujas" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b3" aria-expanded="false" aria-controls="tx-p3">
+          <span class="tx-num">03</span><span class="tx-name" data-i18n="tx3.name">RF Lifting</span><span class="tx-tags" data-i18n="tx3.tags">Firmeza · Colágeno</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p3" role="region" aria-labelledby="tx-b3"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx3.desc">La radiofrecuencia estimula el colágeno y la elastina para mejorar de forma progresiva la firmeza, la elasticidad y la definición del óvalo facial.</p>
+            <ul class="chips" data-i18n="tx3.chips"><li>Firmeza y elasticidad</li><li>Óvalo facial</li><li>Textura y líneas finas</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?auto=format&fit=crop&w=800&q=75" alt="Especialista aplicando un tratamiento facial con aparatología" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b4" aria-expanded="false" aria-controls="tx-p4">
+          <span class="tx-num">04</span><span class="tx-name" data-i18n="tx4.name">Ácido hialurónico</span><span class="tx-tags" data-i18n="tx4.tags">Labios · Surco nasogeniano</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p4" role="region" aria-labelledby="tx-b4"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx4.desc">Aumento de labios y surco nasogeniano con un resultado natural y en armonía con tu rostro, siempre tras una valoración previa.</p>
+            <ul class="chips" data-i18n="tx4.chips"><li>Aumento de labios</li><li>Definición del contorno</li><li>Surco nasogeniano</li><li>Hidratación de labios</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1654375078795-7229b6458d25?auto=format&fit=crop&w=800&q=75" alt="Primer plano de unos labios naturales" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b5" aria-expanded="false" aria-controls="tx-p5">
+          <span class="tx-num">05</span><span class="tx-name" data-i18n="tx5.name">Microblading</span><span class="tx-tags" data-i18n="tx5.tags">Cejas pelo a pelo</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p5" role="region" aria-labelledby="tx-b5"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx5.desc">Cejas definidas y naturales, diseñadas según la forma de tu rostro para enmarcar tu mirada.</p>
+            <ul class="chips" data-i18n="tx5.chips"><li>Diseño de cejas</li><li>Técnica pelo a pelo</li><li>Acabado natural</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1783110782727-b1b79df0c06f?auto=format&fit=crop&w=800&q=75" alt="Diseño de cejas con marcas de medición" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b6" aria-expanded="false" aria-controls="tx-p6">
+          <span class="tx-num">06</span><span class="tx-name" data-i18n="tx6.name">Depilación láser diodo</span><span class="tx-tags" data-i18n="tx6.tags">Reducción duradera del vello</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p6" role="region" aria-labelledby="tx-b6"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx6.desc">Reducción progresiva y duradera del vello, con menos irritación y menos pelos encarnados. Un protocolo por sesiones adaptado a tu piel y a tu tipo de vello.</p>
+            <ul class="chips" data-i18n="tx6.chips"><li>Valoración previa</li><li>Protocolo por sesiones</li><li>Parámetros personalizados</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1700760933574-9f0f4ea9aa3b?auto=format&fit=crop&w=800&q=75" alt="Depilación láser en la pierna" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b7" aria-expanded="false" aria-controls="tx-p7">
+          <span class="tx-num">07</span><span class="tx-name" data-i18n="tx7.name">Manicura</span><span class="tx-tags" data-i18n="tx7.tags">Manos cuidadas</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p7" role="region" aria-labelledby="tx-b7"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx7.desc">Manos cuidadas y un acabado impecable para lucir unas uñas bonitas en el día a día.</p>
+            <ul class="chips" data-i18n="tx7.chips"><li>Manicura</li><li>Esmaltado</li><li>Cuidado de manos</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?auto=format&fit=crop&w=800&q=75" alt="Manos con manicura en tono nude" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b8" aria-expanded="false" aria-controls="tx-p8">
+          <span class="tx-num">08</span><span class="tx-name" data-i18n="tx8.name">Masajes terapéuticos</span><span class="tx-tags" data-i18n="tx8.tags">Bienestar · Relajación</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p8" role="region" aria-labelledby="tx-b8"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx8.desc">Masajes para liberar tensiones, aliviar la carga muscular y regalarte un momento de bienestar.</p>
+            <ul class="chips" data-i18n="tx8.chips"><li>Masaje terapéutico</li><li>Relajación</li><li>Bienestar</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1745327883508-b6cd32e5dde5?auto=format&fit=crop&w=800&q=75" alt="Masaje de espalda" loading="lazy"></div>
+        </div></div></div>
+      </div>
+
+      <div class="tx-item">
+        <h3><button class="tx-row" type="button" id="tx-b9" aria-expanded="false" aria-controls="tx-p9">
+          <span class="tx-num">09</span><span class="tx-name" data-i18n="tx9.name">Peluquería</span><span class="tx-tags" data-i18n="tx9.tags">Corte · Peinado</span><span class="tx-plus" aria-hidden="true"></span>
+        </button></h3>
+        <div class="tx-panel" id="tx-p9" role="region" aria-labelledby="tx-b9"><div class="tx-inner"><div class="tx-content">
+          <div class="tx-body">
+            <p data-i18n="tx9.desc">Tu peinado también forma parte de tu cuidado. Completa tu visita a LeidyT con nuestro servicio de peluquería.</p>
+            <ul class="chips" data-i18n="tx9.chips"><li>Corte</li><li>Peinado</li><li>Cuidado del cabello</li></ul>
+            <a class="link-arrow" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span> <i>→</i></a>
+          </div>
+          <div class="tx-media"><img src="https://images.unsplash.com/photo-1675034741473-afed58a142e8?auto=format&fit=crop&w=800&q=75" alt="Peluquera peinando a una clienta" loading="lazy"></div>
+        </div></div></div>
+      </div>
+    </div>
+    <div class="tx-float" aria-hidden="true"></div>
+  </section>
+
+  <!-- LED-terapia -->
+  <section class="led on-dark" id="led" data-nav="dark" data-led="red" aria-labelledby="led-title">
+    <div class="led-ambient" aria-hidden="true"><i class="a-red"></i><i class="a-green"></i><i class="a-blue"></i></div>
+    <div class="led-grid">
+      <div class="led-visual">
+        <div class="led-rings" aria-hidden="true"><i></i><i></i></div>
+        <div class="led-circle">
+          <img src="https://images.unsplash.com/photo-1731515067388-d5df113d4326?auto=format&fit=crop&w=1100&q=78" alt="Clienta recibiendo LED-terapia facial con máscara de luz" loading="lazy">
+          <span class="led-tint t-red"></span><span class="led-tint t-green"></span><span class="led-tint t-blue"></span>
+        </div>
+        <span class="led-dot" aria-hidden="true"></span>
+      </div>
+      <div>
+        <span class="eyebrow" data-i18n="led.eyebrow">LED-terapia</span>
+        <h2 class="display h-lg reveal-lines" id="led-title" data-i18n="led.title"><span class="ln"><span>Una luz para</span></span><span class="ln"><span><em>cada necesidad.</em></span></span></h2>
+        <p class="led-intro" data-reveal data-i18n="led.intro">Según lo que necesite tu piel, elegimos un espectro de luz distinto. Un complemento ideal para otros tratamientos faciales.</p>
+        <div class="led-tabs" role="tablist" aria-label="Tipos de luz" data-reveal>
+          <button class="led-tab" type="button" role="tab" id="led-t0" aria-controls="led-p0" aria-selected="true" style="--c:#ff5240"><i></i><span data-i18n="led.red">Luz roja</span></button>
+          <button class="led-tab" type="button" role="tab" id="led-t1" aria-controls="led-p1" aria-selected="false" tabindex="-1" style="--c:#3fd98c"><i></i><span data-i18n="led.green">Luz verde</span></button>
+          <button class="led-tab" type="button" role="tab" id="led-t2" aria-controls="led-p2" aria-selected="false" tabindex="-1" style="--c:#4f80ff"><i></i><span data-i18n="led.blue">Luz azul</span></button>
+        </div>
+        <div class="led-panel" id="led-p0" role="tabpanel" aria-labelledby="led-t0">
+          <h3 data-i18n="led.red.t">Recuperación y firmeza</h3>
+          <p data-i18n="led.red.d">Se utiliza en programas orientados a recuperar la piel y mejorar su firmeza y su calidad general.</p>
+        </div>
+        <div class="led-panel" id="led-p1" role="tabpanel" aria-labelledby="led-t1" hidden>
+          <h3 data-i18n="led.green.t">Calma y tono uniforme</h3>
+          <p data-i18n="led.green.d">Ayuda a calmar la piel, reducir las rojeces y conseguir un tono más uniforme.</p>
+        </div>
+        <div class="led-panel" id="led-p2" role="tabpanel" aria-labelledby="led-t2" hidden>
+          <h3 data-i18n="led.blue.t">Pieles con tendencia a imperfecciones</h3>
+          <p data-i18n="led.blue.d">Especialmente indicada para pieles con tendencia a imperfecciones, gracias a su acción antibacteriana.</p>
+        </div>
+        <p class="led-note" data-i18n="led.note">Combinable con limpieza facial profesional, Dermapen, mesoterapia y peelings, según lo que necesite tu piel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Labios -->
+  <section class="lips" id="labios" data-nav="light" aria-labelledby="lips-title">
+    <div class="lips-grid">
+      <div class="lips-media">
+        <img src="https://images.unsplash.com/photo-1654374504608-67c4cfe65fca?auto=format&fit=crop&w=1200&q=80" alt="Labios naturales e hidratados" loading="lazy">
+        <span class="lips-tag" data-i18n="lips.tag">Natural · Armónico · Personalizado</span>
+      </div>
+      <div>
+        <span class="eyebrow" data-i18n="lips.eyebrow">Ácido hialurónico</span>
+        <h2 class="display reveal-lines" id="lips-title" data-i18n="lips.title"><span class="ln"><span>Unos labios bonitos</span></span><span class="ln"><span>no se miden en mililitros.</span></span><span class="ln"><span><em>Se miden en armonía.</em></span></span></h2>
+        <p class="lips-text" data-reveal data-i18n="lips.text">A veces buscamos más volumen; otras, definir el contorno, equilibrar pequeñas asimetrías o recuperar la hidratación. Por eso el resultado empieza antes de la aplicación: observando tus facciones y escuchando lo que quieres conseguir.</p>
+        <ul class="benefits" data-reveal data-i18n="lips.list"><li>Más definición sin perder naturalidad</li><li>Un aspecto más hidratado y jugoso</li><li>Volumen adaptado a tus propios labios</li><li>Un resultado en armonía con tu rostro</li></ul>
+        <p class="lips-quote" data-reveal data-i18n="lips.quote">La idea no es que piensen «se ha hecho los labios», sino «qué bien le quedan».</p>
+        <div data-reveal><a class="btn btn-dark" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combos -->
+  <section class="combos" data-nav="light" aria-labelledby="combo-title">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="combo.eyebrow">Nuestros combos favoritos</span>
+        <h2 class="display h-lg reveal-lines" id="combo-title" data-i18n="combo.title"><span class="ln"><span>Dos tratamientos,</span></span><span class="ln"><span><em>un solo protocolo.</em></span></span></h2>
+      </div>
+      <p class="lead muted" data-reveal data-i18n="combo.lead">Combinamos técnicas que se complementan para trabajar diferentes necesidades de tu piel en un mismo protocolo personalizado.</p>
+    </div>
+    <div class="combo-grid">
+      <article class="combo" data-reveal>
+        <span class="combo-label">Combo 01</span>
+        <div class="combo-eq">
+          <span data-i18n="c1.a">Hidratación facial</span>
+          <span class="combo-plus" aria-hidden="true">+</span>
+          <em data-i18n="c1.b">RF Lifting</em>
+        </div>
+        <div class="combo-result">
+          <strong data-i18n="c1.r">Piel hidratada, luminosa y firme</strong>
+          <p data-i18n="c1.d">Trabajamos dos necesidades en una misma cita: la hidratación y calidad de la piel, y la firmeza con estímulo de colágeno.</p>
+        </div>
+      </article>
+      <article class="combo is-dark" data-reveal>
+        <span class="combo-label">Combo 02</span>
+        <div class="combo-eq">
+          <span data-i18n="c2.a">RF Lifting</span>
+          <span class="combo-plus" aria-hidden="true">+</span>
+          <em data-i18n="c2.b">Biorevitalización</em>
+        </div>
+        <div class="combo-result">
+          <strong data-i18n="c2.r">Firmeza + hidratación + luminosidad</strong>
+          <p data-i18n="c2.d">Mientras el RF trabaja la firmeza y la calidad de la piel, la biorevitalización aporta hidratación, frescura y luminosidad.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Cómo trabajamos -->
+  <section class="how" id="como-trabajamos" data-nav="light" aria-labelledby="how-title">
+    <div class="how-grid">
+      <div class="how-head">
+        <span class="eyebrow" data-i18n="how.eyebrow">Cómo trabajamos</span>
+        <h2 class="display h-lg reveal-lines" id="how-title" data-i18n="how.title"><span class="ln"><span>Tu piel,</span></span><span class="ln"><span><em>paso a paso.</em></span></span></h2>
+        <p class="lead" data-reveal data-i18n="how.lead">No se trata de elegir el tratamiento de moda, sino de combinar los métodos que de verdad necesita tu piel.</p>
+      </div>
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="step" style="--i:0">
+          <div class="step-media"><img src="https://images.unsplash.com/photo-1713207524097-596f3c17afc3?auto=format&fit=crop&w=900&q=75" alt="Retrato de una mujer con la piel al natural" loading="lazy"></div>
+          <div class="step-body"><span class="step-num">01</span><h3 data-i18n="s1.t">Valoración</h3><p data-i18n="s1.d">Analizamos el estado de tu piel, tus proporciones y, sobre todo, lo que quieres conseguir.</p></div>
+        </li>
+        <li class="step" style="--i:1">
+          <div class="step-media"><img src="https://images.unsplash.com/photo-1748543668646-e81cda0890f3?auto=format&fit=crop&w=900&q=75" alt="Texturas de sérums cosméticos" loading="lazy"></div>
+          <div class="step-body"><span class="step-num">02</span><h3 data-i18n="s2.t">Protocolo a medida</h3><p data-i18n="s2.d">Elegimos el tratamiento —o la combinación— más adecuado para ti. No todas las pieles necesitan lo mismo.</p></div>
+        </li>
+        <li class="step" style="--i:2">
+          <div class="step-media"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=75" alt="Esteticista realizando un tratamiento facial" loading="lazy"></div>
+          <div class="step-body"><span class="step-num">03</span><h3 data-i18n="s3.t">Tratamiento</h3><p data-i18n="s3.d">Técnica profesional y productos de calidad, con el tiempo y la atención que mereces.</p></div>
+        </li>
+        <li class="step" style="--i:3">
+          <div class="step-media"><img src="https://images.unsplash.com/photo-1707539160277-e39464517645?auto=format&fit=crop&w=900&q=75" alt="Frasco cuentagotas de sérum facial" loading="lazy"></div>
+          <div class="step-body"><span class="step-num">04</span><h3 data-i18n="s4.t">Cuidado en casa</h3><p data-i18n="s4.d">El cuidado no termina al salir del salón. Te recomendamos productos profesionales como Tonic Essence de Casmara o EE Color Cream SPF 50 de Utsukusy.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Visítanos -->
+  <section class="visit" id="contacto" data-nav="light" aria-labelledby="visit-title">
+    <div class="visit-grid">
+      <div>
+        <span class="eyebrow" data-i18n="visit.eyebrow">Visítanos</span>
+        <h2 class="display h-lg reveal-lines" id="visit-title" data-i18n="visit.title"><span class="ln"><span>Te esperamos en</span></span><span class="ln"><span><em>Lloret de Mar.</em></span></span></h2>
+        <dl class="info" data-reveal>
+          <div><dt data-i18n="visit.where">Dónde</dt><dd data-i18n="visit.where.d">Lloret de Mar, Girona · Costa Brava</dd></div>
+          <div><dt data-i18n="visit.appt">Citas</dt><dd data-i18n="visit.appt.d">Siempre con cita previa</dd></div>
+          <div><dt data-i18n="visit.book">Reservas</dt><dd data-i18n="visit.book.d">Por mensaje directo en Instagram</dd></div>
+          <div><dt data-i18n="visit.lang">Idiomas</dt><dd data-i18n="visit.lang.d">Español · Русский</dd></div>
+        </dl>
+        <div class="visit-actions" data-reveal>
+          <a class="btn btn-dark" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+            <span data-i18n="visit.dm">Escribir por Instagram</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.instagram.com/leidyt.estetica.lloret/" target="_blank" rel="noopener"><span data-i18n="visit.ig">Ver nuestro Instagram</span></a>
+        </div>
+      </div>
+      <figure class="visit-arch" data-reveal>
+        <div class="arch"><img src="https://images.unsplash.com/photo-1749137315807-036403c62107?auto=format&fit=crop&w=1000&q=78" alt="Productos de cuidado facial en una estantería de tonos cálidos" loading="lazy"></div>
+        <figcaption>@leidyt.estetica.lloret</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="cta on-dark" data-nav="dark" aria-labelledby="cta-title">
+    <div class="cta-orb" aria-hidden="true"></div>
+    <span class="eyebrow" data-reveal data-i18n="cta.eyebrow">Reserva tu cita</span>
+    <h2 class="display reveal-lines" id="cta-title" data-i18n="cta.title"><span class="ln"><span>Tu piel,</span></span><span class="ln"><span><em>en buenas manos.</em></span></span></h2>
+    <div data-reveal>
+      <a class="btn btn-light" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+      <p class="cta-note" data-i18n="cta.note">Escríbenos por Instagram y te ayudamos a elegir tu tratamiento.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-nav="dark">
+  <div class="footer-cols">
+    <div>
+      <a class="logo" href="#top" aria-label="LeidyT, inicio" data-i18n-aria="nav.home">Leidy<em>T</em></a>
+      <p class="footer-tag" data-i18n="foot.tag">Salón de belleza y centro estético en Lloret de Mar. Beauty &amp; Aesthetic Clinic.</p>
+    </div>
+    <div>
+      <h4 data-i18n="nav.tx">Tratamientos</h4>
+      <ul>
+        <li><a href="#tratamientos" data-i18n="tx1.name">Estética facial avanzada</a></li>
+        <li><a href="#tratamientos" data-i18n="tx3.name">RF Lifting</a></li>
+        <li><a href="#labios" data-i18n="tx4.name">Ácido hialurónico</a></li>
+        <li><a href="#tratamientos" data-i18n="tx5.name">Microblading</a></li>
+        <li><a href="#tratamientos" data-i18n="tx6.name">Depilación láser diodo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="nav.contact">Contacto</h4>
+      <ul>
+        <li data-i18n="foot.city">Lloret de Mar, Girona</li>
+        <li data-i18n="visit.appt.d">Siempre con cita previa</li>
+        <li><a href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener" data-i18n="visit.dm">Escribir por Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="foot.follow">Síguenos</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/leidyt.estetica.lloret/" target="_blank" rel="noopener">Instagram</a></li>
+        <li>@leidyt.estetica.lloret</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-mark" aria-hidden="true"><span data-split="chars">Leidy</span><span class="t" data-split="chars">T</span></div>
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> LeidyT · Lloret de Mar</span>
+    <nav aria-label="Legal"><a href="#" data-i18n="foot.legal">Aviso legal</a><a href="#" data-i18n="foot.privacy">Privacidad</a><a href="#">Cookies</a></nav>
+  </div>
+</footer>
+
+<a class="btn book-bar" href="https://ig.me/m/leidyt.estetica.lloret" data-book target="_blank" rel="noopener"><span data-i18n="cta.book">Reservar valoración</span></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ============================================================
+  //  Configuración: si el salón facilita un WhatsApp, pon aquí el
+  //  número (p. ej. '34600000000') y todos los botones de reserva
+  //  abrirán WhatsApp. Mientras esté vacío, abren un mensaje
+  //  directo de Instagram.
+  // ============================================================
+  var CONFIG = {
+    instagram: 'leidyt.estetica.lloret',
+    whatsapp: ''
+  };
+
+  var doc = document.documentElement;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = !!(window.gsap && window.ScrollTrigger);
+  var motion = hasGSAP && !reduce;
+
+  $('#year').textContent = new Date().getFullYear();
+
+  // ---------- Textos en ruso ----------
+  function lines() {
+    return Array.prototype.map.call(arguments, function (s) { return '<span class="ln"><span>' + s + '</span></span>'; }).join('');
+  }
+  function lis(arr) { return arr.map(function (s) { return '<li>' + s + '</li>'; }).join(''); }
+  var mqRu = ['Косметология', 'Эстетика лица', 'RF-лифтинг', 'Гиалуроновая кислота', 'Микроблейдинг', 'Диодный лазер', 'Маникюр', 'Массаж', 'Парикмахерская'];
+  var RU = {
+    'nav.home': 'LeidyT, на главную',
+    'nav.tx': 'Процедуры',
+    'nav.led': 'LED-терапия',
+    'nav.how': 'Как мы работаем',
+    'nav.contact': 'Контакты',
+    'nav.book': 'Записаться',
+    'nav.menu': 'Меню',
+    'nav.close': 'Закрыть',
+    'menu.where': 'Льорет-де-Мар · Коста-Брава · По предварительной записи',
+    'cta.book': 'Записаться на консультацию',
+    'hero.title': lines('Кожа меняется.', '<em>Меняется</em>', '<em>и уход.</em>'),
+    'hero.sub': 'Косметология и эстетика в Льорет-де-Мар. Каждая процедура начинается с индивидуальной консультации — ведь каждой коже нужно что-то своё.',
+    'hero.link': 'Смотреть процедуры',
+    'hero.services': 'Косметология · Эстетика лица · Микроблейдинг · Маникюр · Лечебный массаж · Парикмахерская',
+    'hero.badge': 'Индивидуальный подход ✦ Безопасные процедуры ✦',
+    'hero.chip': 'Говорим по-испански и по-русски',
+    'mq': mqRu.concat(mqRu).map(function (s) { return '<span>' + s + '</span>'; }).join(''),
+    'man.eyebrow': 'Наша философия',
+    'man.text': 'Каждая кожа индивидуальна, и уход за ней тоже должен быть индивидуальным. Наша задача — не изменить ваше лицо, а улучшить качество кожи и помочь ей <em>выглядеть лучше с годами.</em>',
+    'p1.t': 'Индивидуальная консультация',
+    'p1.d': 'Перед каждой процедурой мы оцениваем состояние кожи, черты лица и ваши пожелания.',
+    'p2.t': 'Безопасные процедуры',
+    'p2.d': 'Профессиональные протоколы под каждый случай, аккуратная техника и качественные препараты.',
+    'p3.t': 'Естественный результат',
+    'p3.d': 'Подчёркиваем вашу красоту, сохраняя естественность: гармонично и индивидуально.',
+    'p4.t': 'Уход и дома',
+    'p4.d': 'Поможем подобрать профессиональную косметику, чтобы продолжать уход каждый день.',
+    'tx.eyebrow': 'Процедуры',
+    'tx.title': lines('Экспертный уход,', '<em>созданный для вас.</em>'),
+    'tx.lead': 'От чистки лица до комбинированных протоколов эстетической косметологии. Нажмите на процедуру, чтобы узнать больше.',
+    'tx1.name': 'Эстетика лица',
+    'tx1.tags': 'Чистка · Увлажнение · Пилинги',
+    'tx1.desc': 'Полностью индивидуальные косметологические процедуры для увлажнения, сияния, ровной текстуры и качества кожи.',
+    'tx1.chips': lis(['Профессиональная чистка лица', 'Увлажнение', 'Мезотерапия', 'Dermapen', 'Пилинг BioRePeelCl₃', 'LED-терапия']),
+    'tx2.name': 'Биоревитализация и PDRN',
+    'tx2.tags': 'Увлажнение · Восстановление',
+    'tx2.desc': 'Цель — не объём и не изменение черт лица, а качество кожи: она становится более увлажнённой, свежей и сияющей.',
+    'tx2.chips': lis(['Биоревитализация гиалуроновой кислотой', 'Восстанавливающий PDRN', 'Сочетается с RF-лифтингом']),
+    'tx3.name': 'RF-лифтинг',
+    'tx3.tags': 'Упругость · Коллаген',
+    'tx3.desc': 'Радиочастотное воздействие стимулирует выработку коллагена и эластина, постепенно улучшая упругость, эластичность и овал лица.',
+    'tx3.chips': lis(['Упругость и эластичность', 'Чёткий овал лица', 'Текстура и мелкие морщинки']),
+    'tx4.name': 'Гиалуроновая кислота',
+    'tx4.tags': 'Губы · Носогубные складки',
+    'tx4.desc': 'Увеличение губ и коррекция носогубных складок с естественным, гармоничным результатом — всегда после предварительной консультации.',
+    'tx4.chips': lis(['Увеличение губ', 'Чёткий контур', 'Носогубные складки', 'Увлажнение губ']),
+    'tx5.name': 'Микроблейдинг',
+    'tx5.tags': 'Волосковая техника',
+    'tx5.desc': 'Естественные, выразительные брови, форма которых подбирается под черты вашего лица.',
+    'tx5.chips': lis(['Дизайн бровей', 'Волосковая техника', 'Естественный результат']),
+    'tx6.name': 'Диодная лазерная эпиляция',
+    'tx6.tags': 'Надолго без лишних волос',
+    'tx6.desc': 'Постепенное и долгосрочное уменьшение роста волос, меньше раздражения и вросших волос. Курс процедур подбирается под вашу кожу и тип волос.',
+    'tx6.chips': lis(['Предварительная консультация', 'Курс процедур', 'Индивидуальные параметры']),
+    'tx7.name': 'Маникюр',
+    'tx7.tags': 'Ухоженные руки',
+    'tx7.desc': 'Ухоженные руки и безупречное покрытие — красивые ногти каждый день.',
+    'tx7.chips': lis(['Маникюр', 'Покрытие', 'Уход за руками']),
+    'tx8.name': 'Лечебный массаж',
+    'tx8.tags': 'Здоровье · Расслабление',
+    'tx8.desc': 'Массаж, который снимает напряжение, расслабляет мышцы и дарит ощущение лёгкости.',
+    'tx8.chips': lis(['Лечебный массаж', 'Расслабление', 'Хорошее самочувствие']),
+    'tx9.name': 'Парикмахерские услуги',
+    'tx9.tags': 'Стрижка · Укладка',
+    'tx9.desc': 'Причёска — тоже часть ухода за собой. Дополните визит в LeidyT услугами парикмахера.',
+    'tx9.chips': lis(['Стрижка', 'Укладка', 'Уход за волосами']),
+    'led.eyebrow': 'LED-терапия',
+    'led.title': lines('Свой свет', '<em>для каждой задачи.</em>'),
+    'led.intro': 'В зависимости от потребностей кожи специалист подбирает определённый спектр света. Отличное дополнение к другим процедурам.',
+    'led.red': 'Красный',
+    'led.green': 'Зелёный',
+    'led.blue': 'Синий',
+    'led.red.t': 'Восстановление и упругость',
+    'led.red.d': 'Используется в программах, направленных на восстановление кожи, улучшение её упругости и общего качества.',
+    'led.green.t': 'Успокоение и ровный тон',
+    'led.green.d': 'Помогает успокоить кожу, уменьшить покраснения и сделать тон более ровным.',
+    'led.blue.t': 'Для проблемной кожи',
+    'led.blue.d': 'Особенно актуален для проблемной кожи, склонной к высыпаниям, благодаря антибактериальному действию.',
+    'led.note': 'Сочетается с профессиональной чисткой, Dermapen, мезотерапией и пилингами — в зависимости от потребностей кожи.',
+    'lips.tag': 'Естественно · Гармонично · Индивидуально',
+    'lips.eyebrow': 'Гиалуроновая кислота',
+    'lips.title': lines('Красота губ', 'измеряется не в миллилитрах,', '<em>а в гармонии.</em>'),
+    'lips.text': 'Иногда нужен объём, иногда — чёткий контур, коррекция небольшой асимметрии или увлажнение. Поэтому результат начинается ещё до процедуры: мы изучаем черты вашего лица и внимательно слушаем ваши пожелания.',
+    'lips.list': lis(['Чёткость без потери естественности', 'Более увлажнённые и сочные губы', 'Объём, подобранный под ваши губы', 'Результат в гармонии с чертами лица']),
+    'lips.quote': 'Цель — чтобы о вас говорили не «сделала губы», а «как ей идёт».',
+    'combo.eyebrow': 'Наши любимые комбинации',
+    'combo.title': lines('Две процедуры —', '<em>один протокол.</em>'),
+    'combo.lead': 'Сочетаем методы, которые дополняют друг друга, чтобы в рамках одного индивидуального протокола работать с разными задачами кожи.',
+    'c1.a': 'Увлажнение лица',
+    'c1.b': 'RF-лифтинг',
+    'c1.r': 'Увлажнённая, сияющая и упругая кожа',
+    'c1.d': 'Работаем сразу с двумя задачами: увлажнение и качество кожи плюс упругость и стимуляция коллагена.',
+    'c2.a': 'RF-лифтинг',
+    'c2.b': 'Биоревитализация',
+    'c2.r': 'Упругость + увлажнение + сияние',
+    'c2.d': 'RF-лифтинг отвечает за упругость и качество кожи, а биоревитализация — за увлажнение, свежесть и сияние.',
+    'how.eyebrow': 'Как мы работаем',
+    'how.title': lines('Ваша кожа —', '<em>шаг за шагом.</em>'),
+    'how.lead': 'Важно не просто выбрать популярную процедуру, а правильно сочетать методы, которые нужны именно вашей коже.',
+    's1.t': 'Консультация',
+    's1.d': 'Оцениваем состояние кожи, пропорции лица и, главное, ваши пожелания.',
+    's2.t': 'Индивидуальный протокол',
+    's2.d': 'Подбираем процедуру или комбинацию процедур, которая подходит именно вам. Не всем нужно одно и то же.',
+    's3.t': 'Процедура',
+    's3.d': 'Профессиональная техника и качественные препараты — с вниманием и без спешки.',
+    's4.t': 'Домашний уход',
+    's4.d': 'Уход не заканчивается в салоне. Мы порекомендуем профессиональные средства — например, Tonic Essence от Casmara или EE Color Cream SPF 50 от Utsukusy.',
+    'visit.eyebrow': 'Приходите к нам',
+    'visit.title': lines('Ждём вас', '<em>в Льорет-де-Мар.</em>'),
+    'visit.where': 'Где',
+    'visit.where.d': 'Льорет-де-Мар, Жирона · Коста-Брава',
+    'visit.appt': 'Запись',
+    'visit.appt.d': 'Только по предварительной записи',
+    'visit.book': 'Как записаться',
+    'visit.book.d': 'Напишите нам в директ Instagram',
+    'visit.lang': 'Языки',
+    'visit.lang.d': 'Испанский · Русский',
+    'visit.dm': 'Написать в Instagram',
+    'visit.ig': 'Наш Instagram',
+    'cta.eyebrow': 'Запись',
+    'cta.title': lines('Ваша кожа —', '<em>в надёжных руках.</em>'),
+    'cta.note': 'Напишите нам в Instagram — поможем подобрать процедуру.',
+    'foot.tag': 'Салон красоты и косметология в Льорет-де-Мар. Beauty &amp; Aesthetic Clinic.',
+    'foot.city': 'Льорет-де-Мар, Жирона',
+    'foot.follow': 'Мы в соцсетях',
+    'foot.legal': 'Правовая информация',
+    'foot.privacy': 'Конфиденциальность'
+  };
+  var META = {
+    es: { title: document.title, desc: $('meta[name="description"]').content },
+    ru: {
+      title: 'LeidyT · Салон красоты и косметология в Льорет-де-Мар',
+      desc: 'LeidyT Beauty & Aesthetic Clinic — салон красоты и косметология в Льорет-де-Мар: эстетика лица, RF-лифтинг, гиалуроновая кислота, микроблейдинг, лазерная эпиляция, маникюр, массаж и парикмахерские услуги.'
+    }
+  };
+
+  // Guardamos el texto original en español antes de tocar nada
+  var i18nEls = $$('[data-i18n]');
+  var ariaEls = $$('[data-i18n-aria]');
+  i18nEls.forEach(function (el) { el._es = el.innerHTML; });
+  ariaEls.forEach(function (el) { el._es = el.getAttribute('aria-label'); });
+
+  var lang = 'es';
+  function applyLang(l) {
+    lang = l;
+    i18nEls.forEach(function (el) {
+      var html = l === 'ru' ? RU[el.getAttribute('data-i18n')] : el._es;
+      if (html != null) el.innerHTML = html;
+    });
+    ariaEls.forEach(function (el) {
+      var v = l === 'ru' ? RU[el.getAttribute('data-i18n-aria')] : el._es;
+      if (v != null) el.setAttribute('aria-label', v);
+    });
+    doc.lang = l;
+    document.title = META[l].title;
+    $('meta[name="description"]').content = META[l].desc;
+    $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
+    setupBooking();
+  }
+
+  // ---------- Enlaces de reserva ----------
+  function setupBooking() {
+    var href;
+    if (CONFIG.whatsapp) {
+      var msg = lang === 'ru' ? 'Здравствуйте! Хочу записаться на консультацию в LeidyT.' : 'Hola LeidyT, me gustaría reservar una valoración.';
+      href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg);
+    } else {
+      href = 'https://ig.me/m/' + CONFIG.instagram;
+    }
+    $$('[data-book]').forEach(function (a) { a.href = href; });
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem('leidyt-lang'); } catch (e) {}
+  var startLang = saved || ((navigator.language || '').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'es');
+  if (startLang === 'ru') applyLang('ru'); else setupBooking();
+
+  // ---------- Partir texto en letras / palabras ----------
+  $$('[data-split="chars"]').forEach(function (el) {
+    el.innerHTML = Array.from(el.textContent).map(function (c) {
+      return '<span class="ch">' + (c === ' ' ? '&nbsp;' : c) + '</span>';
+    }).join('');
+  });
+  function wrapWords(node) {
+    Array.from(node.childNodes).forEach(function (n) {
+      if (n.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          var s = document.createElement('span');
+          s.className = 'w';
+          s.textContent = part;
+          frag.appendChild(s);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) {
+        wrapWords(n);
+      }
+    });
+  }
+  var manText = $('.manifesto-text');
+  var wordsTween = null;
+  function buildWords() {
+    wrapWords(manText);
+    if (!motion) return;
+    if (wordsTween) { if (wordsTween.scrollTrigger) wordsTween.scrollTrigger.kill(); wordsTween.kill(); }
+    wordsTween = gsap.fromTo($$('.w', manText), { opacity: 0.14 }, {
+      opacity: 1, ease: 'none', stagger: 0.5,
+      scrollTrigger: { trigger: manText, start: 'top 80%', end: 'bottom 48%', scrub: true }
+    });
+  }
+
+  // ---------- Smooth scroll (Lenis) ----------
+  var lenis = null;
+  if (motion) {
+    doc.classList.add('js-motion');
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
+    if (window.Lenis) {
+      lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+      if (doc.classList.contains('is-loading')) lenis.stop();
+    }
+  }
+  buildWords();
+
+  // ---------- Cambio de idioma ----------
+  $$('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var l = b.getAttribute('data-lang');
+      if (l === lang) return;
+      applyLang(l);
+      try { localStorage.setItem('leidyt-lang', l); } catch (e) {}
+      buildWords();
+      if (motion) ScrollTrigger.refresh();
+    });
+  });
+
+  // ---------- Menú móvil ----------
+  var toggle = $('.nav-toggle');
+  function openMenu() {
+    doc.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    if (lenis) lenis.stop();
+    if (motion) {
+      gsap.fromTo('.menu-links a', { yPercent: 110 }, { yPercent: 0, duration: 1.1, stagger: 0.07, delay: 0.25, ease: 'expo.out' });
+      gsap.fromTo('.menu-foot', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: 'expo.out' });
+    }
+  }
+  function closeMenu() {
+    if (!doc.classList.contains('menu-open')) return;
+    doc.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (lenis) lenis.start();
+  }
+  toggle.addEventListener('click', function () {
+    doc.classList.contains('menu-open') ? closeMenu() : openMenu();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  $$('.menu [data-book]').forEach(function (a) { a.addEventListener('click', closeMenu); });
+
+  // ---------- Anclas ----------
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = $(id);
+      if (!target) return;
+      e.preventDefault();
+      closeMenu();
+      if (lenis) lenis.scrollTo(target, { duration: 1.6 });
+      else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
+  // ---------- Nav: tema según sección, ocultar al bajar, mostrar al subir ----------
+  var nav = $('.nav');
+  var bookBar = $('.book-bar');
+  var visit = $('#contacto');
+  var lastY = window.scrollY;
+  var ticking = false;
+  function onScroll() {
+    var y = window.scrollY;
+    var vh = window.innerHeight;
+    nav.classList.toggle('is-scrolled', y > 40);
+    if (!doc.classList.contains('menu-open')) {
+      if (y > lastY + 4 && y > vh * 0.7) nav.classList.add('is-hidden');
+      else if (y < lastY - 4 || y < vh * 0.7) nav.classList.remove('is-hidden');
+    }
+    lastY = y;
+    var hits = document.elementsFromPoint(window.innerWidth / 2, 34);
+    for (var i = 0; i < hits.length; i++) {
+      if (nav.contains(hits[i])) continue;
+      var sec = hits[i].closest('[data-nav]');
+      if (sec) { nav.setAttribute('data-theme', sec.getAttribute('data-nav')); break; }
+    }
+    var visitTop = visit.getBoundingClientRect().top;
+    bookBar.classList.toggle('is-visible', y > vh * 0.9 && visitTop > vh * 0.6);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  // ---------- Tratamientos: acordeón ----------
+  var txItems = $$('.tx-item');
+  var refreshTimer = null;
+  var hideFloat = function () {};
+  function setOpen(item, open) {
+    item.classList.toggle('is-open', open);
+    $('.tx-row', item).setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  txItems.forEach(function (item) {
+    $('.tx-row', item).addEventListener('click', function () {
+      var willOpen = !item.classList.contains('is-open');
+      txItems.forEach(function (other) { if (other !== item) setOpen(other, false); });
+      setOpen(item, willOpen);
+      // Con el tratamiento abierto, su foto ya está en el panel: quitamos la flotante
+      if (willOpen) hideFloat();
+      if (motion) {
+        clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(function () { ScrollTrigger.refresh(); }, 850);
+      }
+    });
+  });
+
+  // ---------- Tratamientos: imagen que sigue al cursor ----------
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px)').matches;
+  if (motion && fine) {
+    doc.classList.add('has-float');
+    var flt = $('.tx-float');
+    var fltImgs = [];
+    var hideTimer = null;
+    var shown = false;
+    gsap.set(flt, { xPercent: -50, yPercent: -50, scale: 0.6 });
+    var xTo = gsap.quickTo(flt, 'x', { duration: 0.65, ease: 'power3' });
+    var yTo = gsap.quickTo(flt, 'y', { duration: 0.65, ease: 'power3' });
+    var buildFloat = function () {
+      if (fltImgs.length) return;
+      txItems.forEach(function (item) {
+        var src = $('.tx-media img', item);
+        var img = document.createElement('img');
+        img.src = src.src;
+        img.alt = '';
+        flt.appendChild(img);
+        fltImgs.push(img);
+      });
+    };
+    hideFloat = function () {
+      clearTimeout(hideTimer);
+      if (!shown) return;
+      shown = false;
+      gsap.to(flt, { opacity: 0, scale: 0.6, duration: 0.45, ease: 'power3.in', overwrite: 'auto' });
+    };
+    txItems.forEach(function (item, k) {
+      var row = $('.tx-row', item);
+      row.addEventListener('pointerenter', function (e) {
+        clearTimeout(hideTimer);
+        if (item.classList.contains('is-open')) { hideFloat(); return; }
+        buildFloat();
+        fltImgs.forEach(function (img, j) { img.classList.toggle('is-on', j === k); });
+        if (!shown) {
+          shown = true;
+          gsap.set(flt, { x: e.clientX, y: e.clientY });
+          gsap.to(flt, { opacity: 1, scale: 1, duration: 0.6, ease: 'expo.out', overwrite: 'auto' });
+        }
+      });
+      row.addEventListener('pointerleave', function () {
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(hideFloat, 80);
+      });
+      row.addEventListener('pointermove', function (e) { xTo(e.clientX); yTo(e.clientY); });
+    });
+  }
+
+  // ---------- LED: selector de luz ----------
+  var led = $('.led');
+  var ledTabs = $$('.led-tab');
+  var ledPanels = $$('.led-panel');
+  var LED_KEYS = ['red', 'green', 'blue'];
+  var ledI = 0, ledTimer = null, ledTouched = false, ledVisible = false;
+  function setLed(i, focus) {
+    ledI = i;
+    led.setAttribute('data-led', LED_KEYS[i]);
+    ledTabs.forEach(function (t, k) {
+      t.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      t.tabIndex = k === i ? 0 : -1;
+    });
+    ledPanels.forEach(function (p, k) { p.hidden = k !== i; });
+    if (focus) ledTabs[i].focus();
+  }
+  function syncLedAuto() {
+    clearInterval(ledTimer);
+    if (reduce || ledTouched || !ledVisible) return;
+    ledTimer = setInterval(function () { setLed((ledI + 1) % 3); }, 4800);
+  }
+  ledTabs.forEach(function (t, k) {
+    t.addEventListener('click', function () { ledTouched = true; syncLedAuto(); setLed(k); });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight') n = (ledI + 1) % 3;
+      if (e.key === 'ArrowLeft') n = (ledI + 2) % 3;
+      if (n === null) return;
+      e.preventDefault();
+      ledTouched = true;
+      syncLedAuto();
+      setLed(n, true);
+    });
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      ledVisible = entries[0].isIntersecting;
+      syncLedAuto();
+    }, { threshold: 0.35 }).observe(led);
+  }
+
+  if (!motion) { doc.classList.remove('is-loading'); return; }
+
+  // ============================================================
+  //  A partir de aquí: animaciones GSAP
+  // ============================================================
+
+  // ---------- Intro del hero (preparada en pausa) ----------
+  var heroTl = gsap.timeline({ paused: true, defaults: { ease: 'expo.out' } });
+  heroTl
+    .fromTo('.hero .arch', { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.8, ease: 'expo.inOut' }, 0)
+    .from('.hero .arch img', { scale: 1.35, duration: 2.4 }, 0.2)
+    .from('.hero-title .ln > span', { yPercent: 115, duration: 1.6, stagger: 0.1 }, 0.35)
+    .from('.hero .eyebrow, .hero-sub, .hero-cta, .hero-services', { y: 30, opacity: 0, duration: 1.4, stagger: 0.09 }, 0.65)
+    .from('.badge', { scale: 0, rotate: -90, duration: 1.5 }, 1.0)
+    .from('.hero-chip', { x: 30, opacity: 0, duration: 1.3 }, 1.1)
+    .from('.nav', { yPercent: -100, opacity: 0, duration: 1.3, clearProps: 'transform,opacity' }, 0.8)
+    .from('.scroll-cue', { opacity: 0, duration: 1 }, 1.3);
+
+  // ---------- Preloader ----------
+  var loader = $('.loader');
+  function finishLoading() {
+    doc.classList.remove('is-loading');
+    if (loader) loader.remove();
+    if (lenis) lenis.start();
+    ScrollTrigger.refresh();
+  }
+  if (doc.classList.contains('is-loading') && loader) {
+    window.scrollTo(0, 0);
+    gsap.timeline({ onComplete: finishLoading })
+      .from('.loader-word .ch', { yPercent: 115, duration: 1, stagger: 0.06, ease: 'expo.out' }, 0)
+      .from('.loader-sub', { opacity: 0, y: 10, duration: 0.8, ease: 'power2.out' }, 0.3)
+      .to('.loader-bar i', { scaleX: 1, duration: 1.3, ease: 'power2.inOut' }, 0)
+      .to('.loader-word .ch', { yPercent: -115, duration: 0.7, stagger: 0.035, ease: 'expo.in' }, '+=0.1')
+      .to('.loader-sub, .loader-bar', { opacity: 0, duration: 0.4 }, '<')
+      .add(function () { heroTl.play(); }, '-=0.15')
+      .to(loader, { clipPath: 'inset(0% 0% 100% 0%)', duration: 1.2, ease: 'expo.inOut' }, '-=0.3');
+  } else {
+    heroTl.play();
+  }
+
+  // ---------- Hero al hacer scroll ----------
+  gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
+    .to('.hero-copy', { yPercent: -14, opacity: 0.2, ease: 'none' }, 0)
+    .to('.hero .arch img', { yPercent: 8, ease: 'none' }, 0)
+    .to('.hero-visual', { yPercent: -8, ease: 'none' }, 0);
+
+  // ---------- Titulares por líneas y fade-ups ----------
+  $$('.reveal-lines').forEach(function (el) {
+    gsap.from($$('.ln > span', el), {
+      yPercent: 115, duration: 1.5, stagger: 0.1, ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+    });
+  });
+  $$('[data-reveal]').forEach(function (el) {
+    gsap.from(el, {
+      y: 50, opacity: 0, duration: 1.5, ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+    });
+  });
+
+  // ---------- Tratamientos: filas en cascada ----------
+  gsap.from('.tx-row', {
+    y: 40, opacity: 0, duration: 1.2, stagger: 0.06, ease: 'expo.out',
+    scrollTrigger: { trigger: '.tx-list', start: 'top 85%', once: true }
+  });
+
+  // ---------- LED: círculo que crece y anillos ----------
+  gsap.fromTo('.led-circle', { scale: 0.7, opacity: 0.4 }, {
+    scale: 1, opacity: 1, ease: 'none',
+    scrollTrigger: { trigger: '.led', start: 'top 85%', end: 'center 60%', scrub: true }
+  });
+  gsap.fromTo('.led-rings i', { scale: 0.75, opacity: 0 }, {
+    scale: 1, opacity: 1, stagger: 0.15, ease: 'none',
+    scrollTrigger: { trigger: '.led', start: 'top 70%', end: 'center 55%', scrub: true }
+  });
+
+  // ---------- Labios: imagen que se descubre + parallax ----------
+  gsap.fromTo('.lips-media', { clipPath: 'inset(18% 14% 18% 14% round 28px)' }, {
+    clipPath: 'inset(0% 0% 0% 0% round 28px)', ease: 'none',
+    scrollTrigger: { trigger: '.lips', start: 'top 85%', end: 'center 55%', scrub: true }
+  });
+  gsap.fromTo('.lips-media img', { yPercent: -6, scale: 1.15 }, {
+    yPercent: 6, scale: 1, ease: 'none',
+    scrollTrigger: { trigger: '.lips', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  // ---------- Combos: el "+" gira al entrar ----------
+  $$('.combo').forEach(function (c) {
+    gsap.from($('.combo-plus', c), {
+      rotate: -180, scale: 0.4, duration: 1.6, ease: 'expo.out',
+      scrollTrigger: { trigger: c, start: 'top 80%', once: true }
+    });
+  });
+
+  // ---------- Cómo trabajamos: las tarjetas se apilan ----------
+  var steps = $$('.step');
+  steps.forEach(function (s, i) {
+    if (i === steps.length - 1) return;
+    gsap.to(s, {
+      scale: 0.93, ease: 'none',
+      scrollTrigger: { trigger: steps[i + 1], start: 'top bottom', end: 'top 30%', scrub: true }
+    });
+  });
+
+  // ---------- Visítanos: parallax de la imagen ----------
+  gsap.fromTo('.visit-arch img', { yPercent: -6 }, {
+    yPercent: 6, ease: 'none',
+    scrollTrigger: { trigger: '.visit', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  // ---------- CTA: el halo respira con el scroll ----------
+  gsap.fromTo('.cta-orb', { scale: 0.6, opacity: 0.4 }, {
+    scale: 1.1, opacity: 1, ease: 'none',
+    scrollTrigger: { trigger: '.cta', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+
+  // ---------- Footer: logotipo gigante ----------
+  gsap.from('.footer-mark .ch', {
+    yPercent: 110, duration: 1.6, stagger: 0.06, ease: 'expo.out',
+    scrollTrigger: { trigger: '.footer-mark', start: 'top 95%', once: true }
+  });
+
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
